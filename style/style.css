@@ -1,0 +1,97 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+.topbar {
+    width: 100%;
+    background-color: #333333;
+    z-index: 10;
+}
+
+.menu {
+    margin: 0 auto;
+    padding: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu_list {
+    display: flex;
+    gap: 60px;
+}
+
+.link_icon a {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.sec_test {
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/running.jpg") fixed;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+}
+
+.sec_test .title {
+    font-size: 4em;
+    margin-bottom: 50px;
+}
+
+.sec_test .title span {
+    color: #ed6f63;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.sec_test p {
+    font-size: 2em;
+    line-height: 2;
+}
+
+.sec_test a {
+    display: inline-block;
+    width: 80%;
+    max-width: 400px;
+    font-size: 2.2em;
+    text-decoration: none;
+    color: #fff;
+    background: #ed6f63;
+    margin-top: 50px;
+    padding: 1em 0;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.sec_test a:hover {
+    background: #e43a2b;
+}
+
+.sec_cardio {
+    background: #BDBDBD;
+}
+
+.sec_cardio p{
+    color: black;
+    font-size: 4em;
+    /* margin: 20px 0; */
+}
+
+.sec_cardio p span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
