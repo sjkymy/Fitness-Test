@@ -1,0 +1,68 @@
+html {
+    font-size: 10px;
+}
+
+.topbar {
+    width: 100%;
+    background-color: #333333;
+    z-index: 10;
+}
+
+.menu {
+    margin: 0 auto;
+    padding: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu_list {
+    display: flex;
+    gap: 60px;
+}
+
+.link_icon a {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.extest {
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/running.jpg");
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+}
+
+.extest a {
+    display: inline-block;
+    width: 80%;
+    max-width: 400px;
+    font-size: 2em;
+    text-decoration: none;
+    color: #fff;
+    background: #ed6f63;
+    margin-top: 30px;
+    padding: 1em 0;
+    border-radius: 30px;
+}
+
+.extest a:hover {
+    background: #DBDBDB;
+    color: #333333;
+    font-weight: bold;
+}
+
+.extest p {
+    font-size: 40px;
+    margin: 20px 0;
+}
