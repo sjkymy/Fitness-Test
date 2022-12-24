@@ -2,14 +2,24 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+:root {
+    --color: #ed6f63
+}
+
 html {
     font-size: 10px;
 }
 
 .topbar {
     width: 100%;
-    background-color: #333333;
+    /* background-color: #333333; */
     z-index: 10;
+    /* position: fixed; */
+}
+
+.wrapper {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/running.jpg") fixed;
+    background-size: cover;
 }
 
 .menu {
@@ -22,14 +32,26 @@ html {
     font-size: 18px;
 }
 
+.menu .logo img {
+    width: 130px;
+    cursor: pointer;
+}
+
 .menu a {
     text-decoration: none;
     color: #fff;
 }
 
+.menu a:hover {
+    /* color: var(--color); */
+    font-weight: bold;
+    border-bottom: 5px solid var(--color);
+}
+
 .menu_list {
     display: flex;
     gap: 60px;
+    line-height: 25px;
 }
 
 .link_icon a {
@@ -37,61 +59,83 @@ html {
     font-size: 20px;
 }
 
-.sec_test {
+.sec_home {
     color: #fff;
     text-align: center;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/running.jpg") fixed;
-    background-size: cover;
     width: 100%;
-    height: auto;
-    padding: 100px 0;
+    height: 100vh;
+    padding: 120px 0;
 }
 
-.sec_test .title {
+.sec_home .title {
     font-size: 4em;
     margin-bottom: 50px;
 }
 
-.sec_test .title span {
-    color: #ed6f63;
+.sec_home .title strong {
+    /* color: var(--color); */
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
-.sec_test p {
+.sec_home p {
     font-size: 2em;
     line-height: 2;
 }
 
-.sec_test a {
+.sec_home a {
     display: inline-block;
     width: 80%;
     max-width: 400px;
     font-size: 2.2em;
     text-decoration: none;
     color: #fff;
-    background: #ed6f63;
-    margin-top: 50px;
+    background: var(--color);
+    margin: 50px 0;
     padding: 1em 0;
     border-radius: 30px;
     font-weight: bold;
+    box-shadow: 3px 5px 0 rgba(0,0,0,0.3),3px 5px 0 #ff3333 ,8px 7px 0 2px rgba(0,0,0,0.24);
+    transition: background 0.3s ease-in-out;
 }
 
-.sec_test a:hover {
+.sec_home a:hover {
     background: #e43a2b;
 }
 
 .sec_cardio {
-    background: #BDBDBD;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bodyprofile.png") fixed;
+    background-size: cover;
+    height: 100vh;
+    padding: 200px 0;
+    position: relative;
+    text-align: center;
+    gap: 60px;
 }
 
-.sec_cardio p{
-    color: black;
-    font-size: 4em;
-    /* margin: 20px 0; */
+.sec_cardio .txt_group p{
+    color: #fff;
+    font-size: 3em;
+    line-height: 2;
+    
 }
 
-.sec_cardio p span {
-    font-size: 1.2em;
+.sec_cardio .txt_group p strong {
+    font-size: 1.7em;
     font-weight: bold;
 }
+
+/* .sec_cardio .txt_group {
+    position: absolute;
+    left: 400px;
+    display: none;
+} */
+
+/* @keyframes slidein {
+    from{
+        left: -100px;
+    }
+    to{
+        left: 400px;
+    }
+} */
