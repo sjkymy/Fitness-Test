@@ -19,7 +19,7 @@ html {
 
 .wrapper {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/running.jpg") fixed;
-    background-size: cover;
+    background-size: cover;   
 }
 
 .menu {
@@ -63,7 +63,7 @@ html {
     color: #fff;
     text-align: center;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     padding: 120px 0;
 }
 
@@ -123,6 +123,21 @@ html {
 .sec_cardio .txt_group p strong {
     font-size: 1.7em;
     font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.pointword::after {
+    content: ' ';
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.6em;
+    background-color: var(--color);
+    z-index: -1;
+    box-shadow: 3px 3px 5px var(--color);;
 }
 
 /* .sec_cardio .txt_group {
