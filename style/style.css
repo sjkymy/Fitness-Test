@@ -3,7 +3,7 @@
 }
 
 :root {
-    --color: #ed6f63
+    --mainColor: #ed6f63
 }
 
 html {
@@ -28,7 +28,7 @@ html {
     width: 90%;
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: #fff;
     font-size: 18px;
 }
 
@@ -42,10 +42,9 @@ html {
     color: #fff;
 }
 
-.menu a:hover {
-    /* color: var(--color); */
+.menu .menu_list a:hover {
     font-weight: bold;
-    border-bottom: 5px solid var(--color);
+    border-bottom: 5px solid var(--mainColor);
 }
 
 .menu_list {
@@ -73,7 +72,7 @@ html {
 }
 
 .sec_home .title strong {
-    /* color: var(--color); */
+    /* color: var(--mainColor); */
     font-weight: bold;
     font-size: 1.3em;
 }
@@ -90,7 +89,7 @@ html {
     font-size: 2.2em;
     text-decoration: none;
     color: #fff;
-    background: var(--color);
+    background: var(--mainColor);
     margin: 50px 0;
     padding: 1em 0;
     border-radius: 30px;
@@ -135,22 +134,8 @@ html {
     right: 0;
     bottom: 0;
     height: 0.6em;
-    background-color: var(--color);
+    background-color: var(--mainColor);
     z-index: -1;
-    box-shadow: 3px 3px 5px var(--color);;
+    box-shadow: 3px 3px 5px var(--mainColor);;
 }
 
-/* .sec_cardio .txt_group {
-    position: absolute;
-    left: 400px;
-    display: none;
-} */
-
-/* @keyframes slidein {
-    from{
-        left: -100px;
-    }
-    to{
-        left: 400px;
-    }
-} */

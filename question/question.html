@@ -10,29 +10,43 @@
 </head>
 <body>
     <form id="mainForm">
-        <h1>설문지</h1>
-        <p class="msg-notice">아래 <strong>6개</strong>의 질문을 주의 깊게 읽고 "예" 혹은 "아니오"에 표시하세요.</p>
+        <h1>운동 참여 전 설문지</h1>
+        <p class="msg-notice">아래 <strong>6개</strong>의 질문을 주의 깊게 읽고 해당되는 문항의 체크박스에 표시하세요.</p>
 
-        <label for="inpQ1">1. 심장질환 혹은 만성질환(고혈압, 당뇨 등)이 있다.</label>
-        <input type="checkbox" name="riskCheck" value="yes" id="inpQ1"> <br/>
+        <div class="que_group">
+            <label for="inpQ1">1. 심장질환 혹은 만성질환(고혈압, 당뇨 등)이 있다.</label>
+            <input type="checkbox" name="riskCheck" value="yes" id="inpQ1">
+        </div>
 
-        <label for="inpQ2">2. 위 질환을 치료하기 위해 현재 복용 중인 약물이 있다.
-        <input type="checkbox" name="riskCheck" value="yes" id="inpQ2"> <br/>
+        <div class="que_group">
+            <label for="inpQ2">2. 위 질환을 치료하기 위해 현재 복용 중인 약물이 있다.</label>
+            <input type="checkbox" name="riskCheck" value="yes" id="inpQ2">
+        </div>
 
-        <label for="inpQ3">3. 일상활동 중 또는 신체활동을 할 때 가슴에 통증이 생기는 경우가 있다.</label>
-        <input type="checkbox" name="riskCheck" value="yes" id="inpQ3"> <br/>
+        <div class="que_group">
+            <label for="inpQ3">3. 일상활동 중 또는 신체활동을 할 때 가슴에 통증이 생기는 경우가 있다.</label>
+            <input type="checkbox" name="riskCheck" value="yes" id="inpQ3">
+        </div>
 
-        <label for="inpQ4">4. 지난 1년 동안 어지럼증으로 쓰러지거나 의식을 잃은 적이 있다.</label>
-        <input type="checkbox" name="riskCheck" value="yes" id="inpQ4"> <br/>
+        <div class="que_group">
+            <label for="inpQ4">4. 지난 1년 동안 어지럼증으로 쓰러지거나 의식을 잃은 적이 있다.</label>
+            <input type="checkbox" name="riskCheck" value="yes" id="inpQ4">
+        </div>
 
-        <label for="inpQ5">5. 뼈, 관절, 연부조직(근육, 인대, 건)에 문제가 있다.</label>
-        <input type="checkbox" name="riskCheck" value="yes" id="inpQ5"> <br/>
+        <div class="que_group">
+            <label for="inpQ5">5. 뼈, 관절, 연부조직(근육, 인대, 건)에 문제가 있다.</label>
+            <input type="checkbox" name="riskCheck" value="yes" id="inpQ5">
+        </div>
 
-        <label for="inpQ6">6. 의사에게 의료진 없이 운동을 하면 안된다고 들은 적이 있다.</label>
-        <input type="checkbox" name="riskCheck" value="yes" id="inpQ6"> <br/>
-
-        <button type="submit" id="btnSubmit">제출하기</button>
-        <button type="reset" id="btnReset">초기화</button>
+        <div class="que_group">
+            <label for="inpQ6">6. 의사에게 의료진 없이 운동을 하면 안된다고 들은 적이 있다.</label>
+            <input type="checkbox" name="riskCheck" value="yes" id="inpQ6">
+        </div>
+        
+        <div class="btnClass">
+            <button type="submit" id="btnSubmit">제출하기</button>
+            <button type="reset" id="btnReset">초기화</button>
+        </div>
     </form>
 
     <script>
@@ -40,15 +54,16 @@
         const btnSubmit = mainForm.querySelector('#btnSubmit');
         const btnReset = mainForm.querySelector('#btnReset');
 
-        mainForm.addEventListener('submit', (e) => {
+        btnSubmit.addEventListener('click', (e) => {
             const Inputs = 'input[name="riskCheck"]:checked';
             const result = mainForm.querySelectorAll(Inputs);
             e.preventDefault();
+            console.log(result);
 
             if (result.length >= 1) {
                 alert('지금 운동 못해요')
             } else {
-                alert('하나 이상 체크하세요')
+                alert('넘어갑시다.')
             }
         })
     </script>
