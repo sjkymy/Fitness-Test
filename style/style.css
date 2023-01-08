@@ -82,7 +82,7 @@ html {
     line-height: 2;
 }
 
-.sec_home a {
+.sec_home .btn_start {
     display: inline-block;
     width: 80%;
     max-width: 400px;
@@ -96,9 +96,10 @@ html {
     font-weight: bold;
     box-shadow: 3px 5px 0 rgba(0,0,0,0.3),3px 5px 0 #ff3333 ,8px 7px 0 2px rgba(0,0,0,0.24);
     transition: background 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.sec_home a:hover {
+.sec_home .btn_start:hover {
     background: #e43a2b;
 }
 
@@ -139,3 +140,37 @@ html {
     box-shadow: 3px 3px 5px var(--mainColor);;
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalBox {
+    position: absolute;
+    background-color: #fff;
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+}
+
+.modalBox .btn_close {
+    display: block;
+    width: 80px;
+    margin: 0 auto;
+  }
+
+  .hidden {
+    display: none;
+  }
