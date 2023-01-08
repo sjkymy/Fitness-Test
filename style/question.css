@@ -1,0 +1,78 @@
+:root {
+    --mainColor: #ed6f63
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal .bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalBox {
+    position: absolute;
+    background-color: #fff;
+    width: 800px;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid var(--mainColor);
+}
+
+.modalBox h2 {
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.modalBox .msg-notice {
+    font-size: 2em;
+    margin: 30px;
+}
+
+.modalBox .msg-notice strong {
+    font-weight: bold;
+}
+
+.que_group {
+    margin: 30px;
+    font-size: 1.8em
+}
+
+.modalBox .que_group input {
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.modalBox .btn_position {
+    display: inline-block;
+    width: 120px;
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 1.8em;
+    color: #fff;
+    background-color: var(--mainColor);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modalBox #btnClose {
+    background-color:#cecece;
+    color: black;
+}

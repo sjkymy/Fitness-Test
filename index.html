@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/84080957ae.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/question.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -33,7 +34,7 @@
         <main class="container">
             <section class="sec_home">
                 <h2 class="title">지금 당신의 <strong>체력수준</strong>을 확인해보세요!</h2>
-                <button class="btn_start">시작하기</button>
+                <button class="btn_start" id="btnStart">시작하기</button>
                 <p>기본 헬스 어플 이용한 체력측정</p>
                 <p>연령, 성별 대비 체력 수준 비교</p>
                 <p>목적에 맞는 운동처방까지!</p>
@@ -54,13 +55,47 @@
                 </div>
             </section>
         </main>
+
         <article class="modal hidden">
             <div class="bg"></div>
-            <div class="modalBox">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur quam nobis quis corrupti amet maxime neque, optio, in illo, voluptatibus consequuntur! Rerum quo ea nulla qui, maxime consectetur magni soluta!</p>
+            <form class="modalBox">
+                <h2>운동 참여 전 설문지</h2>
+                <p class="msg-notice">아래 <strong>6개</strong>의 질문을 주의 깊게 읽고 해당되는 문항의 체크박스에 표시하세요.</p>
+
+                <div class="que_group">
+                    <label for="inpQ1">1. 심장질환 혹은 만성질환(고혈압, 당뇨 등)이 있다.</label>
+                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ1">
+                </div>
+        
+                <div class="que_group">
+                    <label for="inpQ2">2. 위 질환을 치료하기 위해 현재 복용 중인 약물이 있다.</label>
+                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ2">
+                </div>
+        
+                <div class="que_group">
+                    <label for="inpQ3">3. 일상활동 중 또는 신체활동을 할 때 가슴에 통증이 생기는 경우가 있다.</label>
+                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ3">
+                </div>
+        
+                <div class="que_group">
+                    <label for="inpQ4">4. 지난 1년 동안 어지럼증으로 쓰러지거나 의식을 잃은 적이 있다.</label>
+                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ4">
+                </div>
+        
+                <div class="que_group">
+                    <label for="inpQ5">5. 뼈, 관절, 연부조직(근육, 인대, 건)에 문제가 있다.</label>
+                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ5">
+                </div>
+        
+                <div class="que_group">
+                    <label for="inpQ6">6. 의사에게 의료진 없이 운동을 하면 안된다고 들은 적이 있다.</label>
+                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ6">
+                </div>
+                
                 <!-- <button class="btn_close">✖</button> -->
-                <button class="btn_close">취소</button>
-            </div>
+                <button id="btnSubmit" class="btn_position">제출하기</button>
+                <button class="btn_position" id="btnClose">취소</button>
+            </form>
         </article>
         
     <script src="./js/main.js"></script>

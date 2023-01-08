@@ -2,7 +2,7 @@
     --mainColor: #ed6f63
 }
 
-#mainForm {
+.modalBox {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -12,18 +12,18 @@
     overflow: hidden;
 }
 
-#mainForm h1 {
+.modalBox h1 {
     font-size: 1.3em;
     text-align: center;
     font-weight: bold;
 }
 
-#mainForm .msg-notice {
+.modalBox .msg-notice {
     font-size: 1.2em;
     margin: 30px;
 }
 
-#mainForm .msg-notice strong {
+.modalBox .msg-notice strong {
     font-weight: bold;
 }
 
@@ -32,7 +32,7 @@
     font-size: 1.25em
 }
 
-#mainForm input {
+.modalBox input {
     width: 20px;
     height: 20px;
     /* border-radius: 4px; */
@@ -41,7 +41,7 @@
     
 }
 
-#mainForm button {
+.modalBox button {
     padding: 15px;
     font-weight: bold;
     margin: 0 10px;

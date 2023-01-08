@@ -9,7 +9,7 @@
     <title>운동 준비 설문지</title>
 </head>
 <body>
-    <form id="mainForm">
+    <form class="modalBox">
         <h1>운동 참여 전 설문지</h1>
         <p class="msg-notice">아래 <strong>6개</strong>의 질문을 주의 깊게 읽고 해당되는 문항의 체크박스에 표시하세요.</p>
 
@@ -50,13 +50,13 @@
     </form>
 
     <script>
-        const mainForm = document.querySelector('#mainForm');
-        const btnSubmit = mainForm.querySelector('#btnSubmit');
-        const btnReset = mainForm.querySelector('#btnReset');
+        const modalBox = document.querySelector('.modalBox');
+        const btnSubmit = modalBox.querySelector('#btnSubmit');
+        const btnReset = modalBox.querySelector('#btnReset');
 
         btnSubmit.addEventListener('click', (e) => {
             const Inputs = 'input[name="riskCheck"]:checked';
-            const result = mainForm.querySelectorAll(Inputs);
+            const result = modalBox.querySelectorAll(Inputs);
             e.preventDefault();
             console.log(result);
 
