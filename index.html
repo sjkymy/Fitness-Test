@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/84080957ae.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/question.css">
+    <link rel="stylesheet" href="./style/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
                     <a href="https://github.com/sjkymy"><i class="fa-brands fa-github"></i></a>
                     <a href="https://www.youtube.com/@healthchanger6509"><i class="fa-brands fa-youtube"></i></a>
                 </ul>
+                <a href="#" class="btn_toggle"><i class="fa-solid fa-bars"></i></a>
             </nav>
         </header>
         <main class="container">
@@ -93,8 +94,10 @@
                 </div>
                 
                 <!-- <button class="btn_close">✖</button> -->
-                <button id="btnSubmit" class="btn_position">제출하기</button>
-                <button class="btn_position" id="btnClose">취소</button>
+                <div class="btn_group">
+                    <button class="btn_position" id="btnSubmit">제출하기</button>
+                    <button class="btn_position" id="btnClose">취소</button>
+                </div>
             </form>
         </article>
         

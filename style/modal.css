@@ -26,7 +26,8 @@
 .modalBox {
     position: absolute;
     background-color: #fff;
-    width: 800px;
+    width: 90%;
+    max-width: 800px;
     height: auto;
     padding: 15px;
     border-radius: 10px;
@@ -60,12 +61,15 @@
     cursor: pointer;
 }
 
+.modalBox .btn_group {
+    text-align: center;
+}
+
 .modalBox .btn_position {
-    display: inline-block;
-    width: 120px;
-    margin: 0 auto;
-    padding: 15px;
-    font-size: 1.8em;
+    /* display: inline-block; */
+    width: 6em;
+    padding: 0.9em;
+    font-size: 1.7rem;
     color: #fff;
     background-color: var(--mainColor);
     cursor: pointer;
