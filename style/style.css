@@ -21,7 +21,7 @@ html {
 
 .wrapper {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/running.jpg") fixed;
-    background-size: cover;   
+    background-size: cover;
 }
 
 .menu {
@@ -31,7 +31,7 @@ html {
     display: flex;
     justify-content: space-between;
     color: #fff;
-    font-size: 18px;
+    font-size: 2.1rem;
 }
 
 .menu .logo img {
@@ -46,7 +46,7 @@ html {
 
 .menu .menu_list a:hover {
     font-weight: bold;
-    border-bottom: 5px solid var(--mainColor);
+    border-bottom: 3px solid var(--mainColor);
 }
 
 .menu_list {
@@ -57,8 +57,12 @@ html {
 
 .link_icon a {
     margin: 0 10px;
-    font-size: 20px;
+    font-size: 25px;
 }
+
+/* .link_icon a:nth-child(2) {
+    color: #c4302b;
+} */
 
 .btn_toggle {
     position: absolute;
@@ -72,17 +76,18 @@ html {
     color: #fff;
     text-align: center;
     width: 100%;
-    height: auto;
+    height: 90vh;
     padding: 100px 0;
 }
 
 .sec_home .title {
-    font-size: 4em;
-    margin-bottom: 50px;
+    font-size: 4rem;
+    margin: 50px 0 40px;
+    word-break: keep-all;
+    line-height: 1.5;
 }
 
 .sec_home .title strong {
-    /* color: var(--mainColor); */
     font-weight: bold;
     font-size: 1.3em;
 }
@@ -94,14 +99,14 @@ html {
 
 .sec_home .btn_start {
     display: inline-block;
-    width: 80%;
-    max-width: 400px;
-    font-size: 2.2em;
+    width: 70%;
+    max-width: 300px;
+    font-size: 2em;
     text-decoration: none;
     color: #fff;
     background: var(--mainColor);
-    margin: 50px 0;
-    padding: 1em 0;
+    margin: 50px 0 80px;
+    padding: 1em;
     border-radius: 30px;
     font-weight: bold;
     box-shadow: 3px 5px 0 rgba(0,0,0,0.3),3px 5px 0 #ff3333 ,8px 7px 0 2px rgba(0,0,0,0.24);
@@ -178,5 +183,18 @@ html {
 
     .menu_list.active, .link_icon.active {
         display: flex;
+    }
+
+    .menu .logo img {
+        width: 150px;
+    }
+
+    .wrapper {
+        background-position: center;
+    }
+
+    .sec_home {
+        height: auto;
+        padding: 10px 0 70px;
     }
 }
