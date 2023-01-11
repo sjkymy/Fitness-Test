@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="fitstyle.css">
+    <title>테스트 결과</title>
+    <style>
+        .aaa {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form id="Form">
+        <div class="twelve">
+            <label for="twelveRun">12분 달리기</label>
+            <input type="number" name="twelve" id="twelveRun" oninput='handleOnInput(this, 5)' placeholder="예) 3000">미터(m)
+        </div>
+        <label for="voMax">VO<sub>2max</sub></label>
+        <input type="text" name="voMax" id="voMax" readonly>ml/kg/min
+        <button id="btnSubmit">버튼</button>
+    </form>
+
+    <script src="fittest.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+#Form label {
+    display: block;
+}
+
+.temp_color {
+    color: red;
+}
