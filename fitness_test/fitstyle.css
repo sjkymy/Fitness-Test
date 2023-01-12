@@ -10,3 +10,9 @@ sub {
 .temp_color {
     color: red;
 }
+
+#twelveRun::-webkit-outer-spin-button,
+#twelveRun::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
