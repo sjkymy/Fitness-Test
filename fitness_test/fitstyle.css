@@ -16,3 +16,13 @@ sub {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.chart_group {
+    width: 90%;
+    max-width: 400px;
+}
+
+/* .chart_bar {
+    width: 100%;
+    height: auto;
+} */

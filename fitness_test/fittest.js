@@ -1,11 +1,13 @@
+import resultChart from "./chart.js";
+
 const Form = document.querySelector("#Form")
 const inpGroup = Form.querySelector(".twelve")
 const inpTwelve = Form.querySelector("#twelveRun");
 const voMax = Form.querySelector("#voMax");
 const btnSubmit = Form.querySelector("#btnSubmit");
 
+// 숫자가 아니면 초기화하고 에러메세지 추가
 inpTwelve.addEventListener("input", (e) => {
-    // 숫자가 아니면 초기화하고 에러메세지 추가
     const temp = document.createElement("p");
     temp.classList.add("temp_color")
     const textnode = document.createTextNode("*숫자만 입력 가능합니다.");
@@ -27,4 +29,7 @@ function handleOnInput(e, maxlength) {
 btnSubmit.addEventListener("click", (e) => {
     e.preventDefault()
     voMax.value = ((inpTwelve.value - 504.9)/44.73).toFixed(1);
+    const maxValue = voMax.value
+
+    resultChart(maxValue)
 })
