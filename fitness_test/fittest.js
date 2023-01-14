@@ -11,25 +11,24 @@ inpTwelve.addEventListener("input", (e) => {
     const temp = document.createElement("p");
     temp.classList.add("temp_color")
     const textnode = document.createTextNode("*숫자만 입력 가능합니다.");
+
     if (!parseInt(e.target.value)) {
         inpTwelve.value = null;
         temp.appendChild(textnode)
         inpGroup.appendChild(temp)
-    };    
-}, { once : true});
-
-// 숫자 5자리까지만 입력 가능한 함수
-function handleOnInput(e, maxlength) {
-    if(e.value.length > maxlength)  {
-      e.value = e.value.substr(0, maxlength);
-    }
-};
+    };
+}, { once : true}); // 이벤트가 한번만 발생하게 하기 위해서 once 사용
 
 // 버튼 클릭하면 VO2max input에 계산된 결과 전달
 btnSubmit.addEventListener("click", (e) => {
     e.preventDefault()
     voMax.value = ((inpTwelve.value - 504.9)/44.73).toFixed(1);
-    const maxValue = voMax.value
+    const maxValue = voMax.value;
+    if (!inpTwelve.value) {
+        alert("입력안함")
+    }
 
+    // chart.js
+    // HTML에 따로 js를 추가하려 했지만 버튼을 클릭하면 발생하는 이벤트이므로 버튼 클릭 이벤트에 import 했음.
     resultChart(maxValue)
 })
