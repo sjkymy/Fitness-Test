@@ -7,6 +7,30 @@ sub {
     display: block;
 }
 
+.tit_gender, .tit_age {
+    /* display: inline-block; */
+    font-size: 1.1rem;
+}
+
+#selecGender, #selecAge {
+    font-size: 1.1rem;
+    margin: 0.7em 0 2em;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1.5px solid #C4C4C4;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+#selecGender:focus {
+    outline: 3px;
+    border: 1.5px solid #ed6f63;
+}
+
+#selecAge:focus {
+    outline: 3px;
+    border: 1.5px solid #ed6f63;
+}
+
 .temp_color {
     color: red;
 }
