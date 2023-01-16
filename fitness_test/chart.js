@@ -51,7 +51,7 @@ const config = {
         plugins: {
             title: {
                 display: true,
-                text: "체력 수준",
+                // text: "체력 수준",
                 color: "#ed6f63",
                 position: "top",
                 padding: {
@@ -70,6 +70,7 @@ const twelveBar = new Chart(document.getElementById('twelveBar'), config);
 
 // 결과 안내문구 첫 번째
 const sectionChart = document.querySelector(".sec_chart");
+const Comment = sectionChart.querySelector(".comment")
 const P1 = document.createElement("p");
 const P2 = document.createElement("p");
 const P3 = document.createElement("p");
@@ -78,11 +79,11 @@ P1.classList.add("result_p1");
 const txtResult1 = document.createTextNode(`회원님의 VO2max는 ${myCardioData}ml/kg/min 입니다.`);
 
 P1.appendChild(txtResult1);1
-sectionChart.append(P1);
+Comment.append(P1);
 
 P2.classList.add("result_p2");
 const txtResult2 = document.createTextNode(`${selecAge.value}대 ${selecGender.value} 평균 VO2max는 ${aveData}ml/kg/min 입니다.`);
 
 P2.appendChild(txtResult2);
-sectionChart.append(P2);
+Comment.append(P2);
 };

@@ -8,18 +8,32 @@
     --textColor: #f0f4f5;
 }
 
-
+body {
+    background-color: #f5f6f7;
+}
 
 sub {
     vertical-align: sub;
     font-size: smaller;
 }
 
-#Form {
+.wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
 }
 
 #Form label {
     display: block;
+}
+#Form input {
+    display: inline-block;
+}
+
+.gender_age_group {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .tit_gender, .tit_age {
@@ -27,13 +41,15 @@ sub {
 }
 
 #selecGender, #selecAge {
-    width: 11em;
+    display: block;
+    width: 100%;
     font-size: 1.2rem;
     margin: 0.7em 0 2em;
     padding: 4px;
     border-radius: 10px;
     border: 1.5px solid #C4C4C4;
     box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 #selecGender:focus, #selecAge:focus {
@@ -55,17 +71,50 @@ option {
   margin: 0;
 }
 
+.twelve, .vo2_max {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
 .twelve label, .vo2_max label {
     font-size: 1.2rem;
 }
 
-#twelveRun, #voMax {
-    width: 6em;
-    font-size: 1.2rem;
-    padding: 0 0 0.2em 2em;
-    margin: 0.7em 0;
+.vo2_max {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#twelveRun {
+    width: 300px;
+    font-size: 1.3rem;
+    padding: 0 0 0.2em 1em;
+    margin: 1em 0;
     border: none;
+    background-color: #f5f6f7;
     border-bottom: 3px #DBDBDB solid;
+}
+
+.vo2_max {
+    text-align: center;
+    margin-top: 70px;
+}
+
+#inpVoMax {
+    text-align: center;
+    width: 100px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding: 0 0 0.2em 0;
+    margin: 0.4em 0;
+    border: none;
+    background-color: #f5f6f7;
+    /* border-bottom: 3px #DBDBDB solid; */
 }
 
 #twelveRun:focus {
@@ -74,8 +123,9 @@ option {
 }
 
 #btnSubmit {
-    width: 12em;
-    margin: 30px 0;
+    display: block;
+    width: 400px;
+    margin: 30px auto;
     border-radius: 44px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -88,4 +138,32 @@ option {
 
 .chart_bar {
     max-width: 500px;
+}
+
+.comment {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    padding: 0 14px;
+    line-height: 1.2;
+}
+
+.comment .result_p1 {
+    margin-bottom: 18px;
+}
+
+
+@media (max-width: 460px) {
+    #twelveRun {
+        width: 10em;
+        padding: 0 0 0.2em 1em;
+    }
+
+    #btnSubmit {
+        width: 80%;
+    }
+
+    .comment {
+        margin-top: 30px;
+        font-size: 16px;
+    }
 }

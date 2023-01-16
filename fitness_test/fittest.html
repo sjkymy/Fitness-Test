@@ -14,47 +14,49 @@
 </head>
 
 <body>
-    <form id="Form">
-        <div class="gender_group">
-            <p class="tit_gender">성별을 선택하세요</p>
-            <select name="gender" id="selecGender">
-                <option value='' selected>-- 선택 --</option>
-                <option value="남성">남성</option>
-                <option value="여성">여성</option>
-            </select>
-        </div>
-        <div class="age_group">
-            <p class="tit_age">연령대를 선택하세요</p>
-            <select name="age" id="selecAge">
-                <option value='' selected>-- 선택 --</option>
-                <option value="20">20대</option>
-                <option value="30">30대</option>
-                <option value="40">40대</option>
-                <option value="50">50대</option>
-                <option value="60">60대</option>
-            </select>
-        </div>
-        <div class="twelve">
-            <label for="twelveRun">12분 달리기</label>
-            <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 5)" placeholder="예) 3000" />미터(m)
-        </div>
-
-        <button id="btnSubmit">결과보기</button>
-
-        <div class="vo2_max">
-            <label for="voMax">VO<sub>2max</sub> 결과</label>
-            <input type="text" name="voMax" id="voMax" readonly>ml/kg/min
-        </div>
-        
-        <section class="sec_chart">
-            <div class="chart_group">
-                <div class="chart_bar">
-                    <canvas id="twelveBar"></canvas>
-                </div>
+    <div class="wrapper">
+        <form id="Form">
+            <div class="gender_age_group">
+                <p class="tit_gender">성별을 선택하세요</p>
+                <select name="gender" id="selecGender">
+                    <option value='' selected>-- 성별 --</option>
+                    <option value="남성">남성</option>
+                    <option value="여성">여성</option>
+                </select>
+                <p class="tit_age">연령대를 선택하세요</p>
+                <select name="age" id="selecAge">
+                    <option value='' selected>-- 연령대 --</option>
+                    <option value="20">20대</option>
+                    <option value="30">30대</option>
+                    <option value="40">40대</option>
+                    <option value="50">50대</option>
+                    <option value="60">60대</option>
+                </select>
             </div>
-            <!-- <p>회원님의 심폐능력 수준은 보통 수준입니다.</p> -->
-        </section>
-    </form>
+            <div class="twelve">
+                <label for="twelveRun">12분 달리기 결과 입력 (m)</label>
+                <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 5)" placeholder="예) 3000" />미터(m)
+            </div>
+            <button id="btnSubmit">결과보기</button>
+
+
+            <div class="vo2_max">
+                <label for="inpVoMax">나의 <strong>VO<sub>2max</sub></strong> 결과</label>
+                <input type="text" name="voMax" id="inpVoMax" readonly>ml/kg/min
+            </div>
+            
+            <section class="sec_chart">
+                <div class="chart_group">
+                    <div class="chart_bar">
+                        <canvas id="twelveBar"></canvas>
+                    </div>
+                </div>
+                <div class="comment">
+                    <!-- <p>회원님의 심폐능력 수준은 보통 수준입니다.</p> -->
+                </div>
+            </section>
+        </form>
+    </div>
 
     <script type="module" src="FitTest.js"></script>
     <script src="InputSet.js"></script>
