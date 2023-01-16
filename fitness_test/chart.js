@@ -66,7 +66,7 @@ const config = {
     }    
 };
 
-const twelveBar = new Chart(document.getElementById('twelveBar').getContext('2d'), config);
+const twelveBar = new Chart(document.getElementById('twelveBar'), config);
 
 // 결과 안내문구 첫 번째
 const sectionChart = document.querySelector(".sec_chart");

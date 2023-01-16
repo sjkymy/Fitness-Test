@@ -9,7 +9,7 @@ const btnSubmit = Form.querySelector("#btnSubmit");
 // 숫자가 아니면 초기화하고 에러메세지 추가
 inpTwelve.addEventListener("input", (e) => {
     const temp = document.createElement("p");
-    temp.classList.add("temp_color")
+    temp.classList.add("temp_error")
     const textnode = document.createTextNode("*숫자만 입력 가능합니다.");
 
     if (!parseInt(e.target.value)) {

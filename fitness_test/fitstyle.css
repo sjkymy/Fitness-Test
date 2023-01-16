@@ -1,6 +1,21 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --mainColor: #ed6f63;
+    --backgroundColor: #263343;
+    --textColor: #f0f4f5;
+}
+
+
+
 sub {
     vertical-align: sub;
     font-size: smaller;
+}
+
+#Form {
 }
 
 #Form label {
@@ -8,12 +23,12 @@ sub {
 }
 
 .tit_gender, .tit_age {
-    /* display: inline-block; */
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 #selecGender, #selecAge {
-    font-size: 1.1rem;
+    width: 11em;
+    font-size: 1.2rem;
     margin: 0.7em 0 2em;
     padding: 4px;
     border-radius: 10px;
@@ -21,17 +36,16 @@ sub {
     box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
 }
 
-#selecGender:focus {
+#selecGender:focus, #selecAge:focus {
     outline: 3px;
-    border: 1.5px solid #ed6f63;
+    border: 2px solid var(--mainColor);
 }
 
-#selecAge:focus {
-    outline: 3px;
-    border: 1.5px solid #ed6f63;
+option {
+    text-align: center;
 }
 
-.temp_color {
+.temp_error {
     color: red;
 }
 
@@ -41,7 +55,37 @@ sub {
   margin: 0;
 }
 
-.chart_group {
-    width: 90%;
+.twelve label, .vo2_max label {
+    font-size: 1.2rem;
+}
+
+#twelveRun, #voMax {
+    width: 6em;
+    font-size: 1.2rem;
+    padding: 0 0 0.2em 2em;
+    margin: 0.7em 0;
+    border: none;
+    border-bottom: 3px #DBDBDB solid;
+}
+
+#twelveRun:focus {
+    outline: none;
+    border-bottom: 3px var(--mainColor) solid;
+}
+
+#btnSubmit {
+    width: 12em;
+    margin: 30px 0;
+    border-radius: 44px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px;
+    color: var(--textColor);
+    background: var(--mainColor);
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.chart_bar {
     max-width: 500px;
 }
