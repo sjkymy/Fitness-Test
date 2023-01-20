@@ -77,7 +77,6 @@ option {
     margin: 0 auto;
 }
 
-
 .twelve label, .vo2_max label {
     font-size: 1.2rem;
 }
@@ -87,7 +86,16 @@ option {
 }
 
 .show {
-    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+.canvas_grade {
+    margin-left: 50px;
+}
+
+.txt_circle {
+    color: #fff;
 }
 
 #twelveRun {
@@ -114,7 +122,7 @@ option {
     margin: 0.4em 0;
     border: none;
     background-color: #f5f6f7;
-    /* border-bottom: 3px #DBDBDB solid; */
+    border-bottom: 3px #DBDBDB solid;
 }
 
 #twelveRun:focus {
@@ -138,11 +146,12 @@ option {
 
 .chart_bar {
     max-width: 500px;
+    padding: 0 5px;
 }
 
 .comment {
     margin-top: 30px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 0 14px;
     line-height: 1.2;
 }

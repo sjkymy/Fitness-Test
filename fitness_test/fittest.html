@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="fitstyle.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script> -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -34,23 +39,24 @@
                 </select>
             </div>
             <div class="twelve">
-                <label for="twelveRun">12분 달리기 결과 입력 (m)</label>
-                <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 5)" placeholder="예) 3000" />미터(m)
+                <label for="twelveRun">12분 동안 몇 미터(m)를 달렸나요?</label>
+                <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 4)" placeholder="예) 3000" />미터(m)
             </div>
             <button id="btnSubmit">결과보기</button>
 
-
             <div class="vo2_max">
-                <label for="inpVoMax">나의 <strong>VO<sub>2max</sub></strong> 결과</label>
-                <input type="text" name="voMax" id="inpVoMax" readonly>ml/kg/min
+                <div class="inp_result">
+                    <label for="inpVoMax">나의 <strong>VO<sub>2max</sub></strong> 결과</label>
+                    <input type="text" name="voMax" id="inpVoMax" readonly>ml/kg/min
+                </div>
+                <div id="canvasGrade"></div>
             </div>
             
             <section class="sec_chart">
-                <div class="chart_group">
                     <div class="chart_bar">
-                        <canvas id="twelveBar"></canvas>
+                        <canvas id="canvasBar"></canvas>
+                        <canvas id="canvasGauge"></canvas>
                     </div>
-                </div>
                 <div class="comment">
                     <!-- <p>회원님의 심폐능력 수준은 보통 수준입니다.</p> -->
                 </div>

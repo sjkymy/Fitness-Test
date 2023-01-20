@@ -1,11 +1,21 @@
-export default function cardioGrade(gender, age, cardioValue) {
+export default function cardioGrade(gender, age, cardioValue, divVomax) {
+    // const gradeP1 = document.createElement("p");
+    // const txtVeryPoor= document.createTextNode("매우부족");
+    // gradeP1.appendChild(txtVeryPoor);
+    // const veryPoor = divVomax.append(gradeP1);
+
+    // const gradeP2 = document.createElement("p");
+    // const txtPoor= document.createTextNode("부족");
+    // gradeP2.appendChild(txtPoor);
+    // const Poor = divVomax.append(gradeP2);
+
     if (gender.value === "남성" && age.value === "20") {
         (cardioValue >= 0 && cardioValue < 38.1) ? console.log("매우부족")
         : (cardioValue >= 38.1 && cardioValue < 44.9) ? console.log("부족")
         : (cardioValue >= 44.9 && cardioValue < 50.2) ? console.log("보통")
         : (cardioValue >= 50.2 && cardioValue < 57.1) ? console.log("우수")
         : (cardioValue >= 57.1) ? console.log("매우 우수") : console.log("입력값이 없습니다.");
-    }
+    };
 
     if (gender.value === "남성" && age.value === "30") {
         (cardioValue >= 0 && cardioValue < 34.1) ? console.log("매우부족")
