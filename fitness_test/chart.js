@@ -28,67 +28,6 @@ if (!selecGender.value && !selecAge.value) {
     console.log("성별 및 연령을 선택하세요.");
     aveData = 0
 };
-////////////
-var opts = {
-    angle: 0, // The span of the gauge arc
-    lineWidth: 0.44, // The line thickness
-    radiusScale: 1, // Relative radius
-    pointer: {
-      length: 0.32, // // Relative to gauge radius
-      strokeWidth: 0.035, // The thickness
-      color: '#000000' // Fill color
-    },
-    limitMax: false,     // If false, max value increases automatically if value > maxValue
-    limitMin: false,     // If true, the min value of the gauge will be fixed
-    colorStart: '#6FADCF',   // Colors
-    colorStop: '#8FC0DA',    // just experiment with them
-    strokeColor: '#E0E0E0',  // to see which ones work best for you
-    generateGradient: true,
-    highDpiSupport: true,     // High resolution support
-    
-  };
-  var target = document.getElementById('canvasGauge'); // your canvas element
-  var fitGauge = new Chart(target).setOptions(opts); // create sexy gauge!
-  fitGauge.maxValue = 3000; // set max gauge value
-  fitGauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-  fitGauge.animationSpeed = 56; // set animation speed (32 is default value)
-  fitGauge.set(1250); // set actual value
-
-
-
-////////////
-
-// const doughnutLabels = ['우수', '매우우수'];
-
-// const myData2 = {
-//     labels: [
-//       '매우우수',
-//       '우수',
-//       '보통',
-//       '부족',
-//       '매우부족'
-//     ],
-//     datasets: [{
-//       label: 'My First Dataset',
-//       data: [10,20,30,40,50],
-//       backgroundColor: [
-//         'red',
-//         'rgb(255, 99, 132)',
-//         'rgb(255, 205, 86)',
-//         'rgb(54, 162, 235)',
-//         'blue'
-//       ],
-//       hoverOffset: 4
-//     }]
-//   };
-
-//   const config2 = {
-//     type: 'doughnut',
-//     data: myData2
-//   };
-
-// const gradeDoughnut = new Chart(document.getElementById('canvasGauge'), config2);
-
 
 ////////////////////
 //
@@ -125,20 +64,59 @@ var opts = {
 //      .attr("font-size", "30px")
 //      .text("부족");
 //////////////
-// const canvas = d3.select('.canvas_grade');
-// const svg = canvas
-//                 .append('svg')
-//                 .attr('width', 90)
-//                 .attr('height', 90);
-//     svg
-//         .append('circle')
-//         .attr('cx', 45)
-//         .attr('cy', 45)
-//         .attr('r', 45)
-//         .attr('fill', "red")
-        
 
-// chart.js
+// Gauge chart
+const config = {
+  type: 'gauge',
+  data: {
+    labels: ['매우부족', '부족', '보통', '우수', '매우우수'],
+    datasets: [{
+      data: ['10', '20', '30', '40', '50'],
+      value: 15,
+      backgroundColor: ['#D7540B', '#F7955F', '#FFCD56', '#BFD0EB', '#89A6DB'],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    title: {
+      display: false,
+      text: '심폐체력 등급'
+    },
+    layout: {
+      padding: {
+        bottom: 30
+      }
+    },
+    needle: {
+      radiusPercentage: 1.2,
+      widthPercentage: 2.5,
+      lengthPercentage: 40,
+      color: 'rgba(0, 0, 0, 1)'
+    },
+    valueLabel: {
+      display: false
+    },
+    plugins: {
+      datalabels: {
+        display: true,
+        formatter:  function (value, context) {
+          return context.chart.data.labels[context.dataIndex];
+        },
+        color: 'rgba(0, 0, 0, 1.0)',
+        backgroundColor: null,
+        font: {
+          size: 20,
+          weight: 'bold'
+        }
+      }
+    }
+  }
+};
+
+const gaugeGrade = new Chart(document.getElementById('gaugeChart').getContext('2d'), config);
+
+// Bar chart
 const barLabels = ['내 결과', `${selecAge.value}대 ${selecGender.value} 적정 수준`];
 
 const myData1 = {
@@ -169,6 +147,15 @@ const config1 = {
             legend: {
                 display: false
             }
+        },
+        scales: {
+          yAxes: [{
+            display: true,
+            ticks: {
+                suggestedMin: 0,
+                beginAtZero: true
+            }
+        }]
         }
     }    
 };

@@ -98,6 +98,12 @@ option {
     color: #fff;
 }
 
+/* #myChart {
+    height: 100%;
+    width: 100%;
+    min-height: 150px;
+  } */
+
 #twelveRun {
     width: 300px;
     font-size: 1.3rem;

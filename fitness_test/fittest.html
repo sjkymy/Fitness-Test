@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="fitstyle.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    
-    <!-- <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
-    <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script> -->
-    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
+    <script src="https://unpkg.com/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    
     <title>테스트 결과</title>
 </head>
 
@@ -53,19 +53,21 @@
             </div>
             
             <section class="sec_chart">
-                    <div class="chart_bar">
-                        <canvas id="canvasBar"></canvas>
-                        <canvas id="canvasGauge"></canvas>
-                    </div>
+                <div id="canvas-holder" style="width:100%">
+                    <canvas id="gaugeChart"></canvas>
+                </div>
+                <div class="chart_bar">
+                    <canvas id="canvasBar"></canvas>
+                </div>
                 <div class="comment">
                     <!-- <p>회원님의 심폐능력 수준은 보통 수준입니다.</p> -->
                 </div>
             </section>
         </form>
     </div>
-
     <script type="module" src="FitTest.js"></script>
     <script src="InputSet.js"></script>
+    
 </body>
 
 </html>
