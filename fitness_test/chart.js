@@ -26,43 +26,49 @@ if (selecGender.value === "여성") {
 
 if (!selecGender.value && !selecAge.value) {
     console.log("성별 및 연령을 선택하세요.");
-    aveData = 0
+    aveData = 0, myCardioData = 0
 };
 
+// 심폐체력 등급
+// 
+
 ////////////////////
-//
-// var width = 90;
-// var height = 90;
+// D3 js
+let width = 120;
+let height = 90;
 
-// var data = ["부족"];
-// var colors = ['#ffffcc','#c2e699','#78c679','#31a354','#006837'];
+const data = [];
+cardioGrade(selecGender, selecAge, myCardioData, data)
+const colors = ['#ffffcc','#c2e699','#78c679','#31a354','#006837'];
 
-// var svg = d3.select(".canvas_grade")
-//             .append("svg")
-//             .attr("width", width)
-//             .attr("height", height);
+const svg = d3.select(".canvas_grade")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
-// var g = svg.selectAll("g")
-//             .data(data)
-//             .enter()
-//             .append("g")
-//             // .attr("transform", function(d, i) {
-//             //     return "translate(0,0)";
-//             // })
+const g = svg.selectAll("g")
+            .data(data)
+            .enter()
+            .append("g")
+            // .attr("transform", function(d, i) {
+            //     return "translate(0,0)";
+            // })
 
-//     g.append("circle")
-//       .attr("cx", 45)
-//       .attr("cy", 45)
-//       .attr("r", 45)
-//       .attr("fill", "red")
+    g.append("rect")
+      .attr("x", 0)
+      .attr("y", 20)
+      .attr("width", width)
+      .attr("height", 50)
+      .attr("fill", "red")
 
-//     g.append("text")
-//     .attr("class", "txt_circle")
-//      .attr("x", 18)
-//      .attr("y", 55)
-//      .attr("fill", "#fff")
-//      .attr("font-size", "30px")
-//      .text("부족");
+    g.append("text")
+      .attr("class", "txt_circle")
+      .attr("x", 60)
+      .attr("y", 54)
+      .attr("text-anchor", "middle")
+      .attr("fill", "#fff")
+      .attr("font-size", "1.5rem")
+      .text(data);
 //////////////
 
 // Gauge chart
@@ -80,8 +86,11 @@ const config = {
   options: {
     responsive: true,
     title: {
-      display: false,
-      text: '심폐체력 등급'
+      display: true,
+      text: '심폐체력 등급',
+      font: {
+        size: 18
+      }
     },
     layout: {
       padding: {
@@ -91,13 +100,13 @@ const config = {
     needle: {
       radiusPercentage: 1.2,
       widthPercentage: 2.5,
-      lengthPercentage: 40,
+      lengthPercentage: 35,
       color: 'rgba(0, 0, 0, 1)'
     },
     valueLabel: {
       display: false
     },
-    plugins: {
+    plugins: {      
       datalabels: {
         display: true,
         formatter:  function (value, context) {
@@ -106,8 +115,8 @@ const config = {
         color: 'rgba(0, 0, 0, 1.0)',
         backgroundColor: null,
         font: {
-          size: 20,
-          weight: 'bold'
+          size: 18,
+          // weight: 'bold'
         }
       }
     }
@@ -133,30 +142,22 @@ const config1 = {
     type: 'bar',
     data: myData1,
     options: {
-        plugins: {
-            title: {
-                display: false,
-                text: "체력 수준",
-                color: "#ed6f63",
-                position: "top",
-                padding: {
-                    top: 10,
-                    bottom: 10,
-                }
-            },
-            legend: {
-                display: false
-            }
-        },
-        scales: {
-          yAxes: [{
-            display: true,
-            ticks: {
-                suggestedMin: 0,
-                beginAtZero: true
-            }
-        }]
-        }
+      title: {
+        display: true,
+        text: '심폐체력 수치',
+      },
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          display: true,
+          ticks: {
+              suggestedMin: 0,
+              beginAtZero: true
+          }
+      }]
+      }
     }    
 };
 
@@ -170,9 +171,6 @@ const Comment = sectionChart.querySelector(".comment")
 const P1 = document.createElement("p");
 const P2 = document.createElement("p");
 const P3 = document.createElement("p");
-
-// 심폐체력 등급
-cardioGrade(selecGender, selecAge, myCardioData, divVomax)
 
 // 버튼 클릭 시 VO2max 결과 수치 보여주기 
 divVomax.classList.add("show")

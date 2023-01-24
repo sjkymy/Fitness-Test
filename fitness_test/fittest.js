@@ -25,7 +25,8 @@ btnSubmit.addEventListener("click", (e) => {
     voMax.value = ((inpTwelve.value - 504.9)/44.73).toFixed(1);
     const maxValue = voMax.value;
     if (!inpTwelve.value) {
-        alert("입력안함")
+        alert("성별 및 연령대를 선택하세요.")
+        voMax.value = 0
     }
 
     // chart.js

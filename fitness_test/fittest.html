@@ -49,18 +49,18 @@
                     <label for="inpVoMax">나의 <strong>VO<sub>2max</sub></strong> 결과</label>
                     <input type="text" name="voMax" id="inpVoMax" readonly>ml/kg/min
                 </div>
-                <div id="canvasGrade"></div>
+                <div id="canvasGrade" class="canvas_grade"></div>
             </div>
             
             <section class="sec_chart">
-                <div id="canvas-holder" style="width:100%">
-                    <canvas id="gaugeChart"></canvas>
-                </div>
                 <div class="chart_bar">
                     <canvas id="canvasBar"></canvas>
                 </div>
                 <div class="comment">
                     <!-- <p>회원님의 심폐능력 수준은 보통 수준입니다.</p> -->
+                </div>
+                <div class="chart_gauge">
+                    <canvas id="gaugeChart"></canvas>
                 </div>
             </section>
         </form>
