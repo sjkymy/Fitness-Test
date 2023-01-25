@@ -19,7 +19,7 @@ sub {
 
 .wrapper {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     margin: 30px auto;
 }
 
@@ -151,6 +151,7 @@ option {
 .chart_bar {
     max-width: 500px;
     padding: 0 5px;
+    margin: 0 auto;
 }
 
 .chart_gauge {
@@ -159,15 +160,24 @@ option {
     margin-top: 50px;
 }
 
-.comment {
+.bar_comment {
     margin-top: 25px;
     font-size: 1.2rem;
-    padding: 0 14px;
+    padding: 0 10px 0 100px;
     line-height: 1.2;
+    /* text-align: center; */
 }
 
-.comment .result_p1 {
+.bar_comment .result_p1 {
     margin-bottom: 18px;
+}
+
+.gauge_comment {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    padding: 0 10px 0 100px;
+    line-height: 1.2;
+    /* text-align: center; */
 }
 
 
@@ -181,8 +191,25 @@ option {
         width: 80%;
     }
 
-    .comment {
+    .show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .canvas_grade {
+        margin-left: 0;
+    }
+
+    .bar_comment {
         margin-top: 30px;
         font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .gauge_comment {
+        margin-top: 30px;
+        font-size: 16px;
+        padding: 0 10px;
     }
 }

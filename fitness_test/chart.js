@@ -166,22 +166,28 @@ const twelveBar = new Chart(document.getElementById('canvasBar'), config1);
 // 결과 안내문구
 const sectionChart = document.querySelector(".sec_chart");
 const divVomax = Form.querySelector(".vo2_max")
-const Comment = sectionChart.querySelector(".comment")
+const barComment = sectionChart.querySelector(".bar_comment")
+const gaugeComment = sectionChart.querySelector(".gauge_comment")
 const P1 = document.createElement("p");
 const P2 = document.createElement("p");
 const P3 = document.createElement("p");
 
-// 버튼 클릭 시 VO2max 결과 수치 보여주기 
+// 버튼 클릭 시 VO2max 결과 수치(숫자) 보여주기 
 divVomax.classList.add("show")
 
-// 그래프 밑에 설명 문구
+// bar 그래프 설명 문구
 P1.classList.add("result_p1");
 const txtResult1 = document.createTextNode(`▶ 회원님의 VO2max는 ${myCardioData}ml/kg/min 입니다.`);
 P1.appendChild(txtResult1);1
-Comment.append(P1);
+barComment.append(P1);
 
 P2.classList.add("result_p2");
 const txtResult2 = document.createTextNode(`▶ ${selecAge.value}대 ${selecGender.value} 적정 VO2max는 ${aveData}ml/kg/min 입니다.`);
 P2.appendChild(txtResult2);
-Comment.append(P2);
+barComment.append(P2);
+
+P3.classList.add("result_p3");
+const txtResult3 = document.createTextNode(`▶ 회원님의 체력 수준은 5개의 등급 중 ${dataGrade[0]}입니다.`);
+P3.appendChild(txtResult3);
+gaugeComment.append(P3);
 };
