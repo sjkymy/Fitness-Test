@@ -1,10 +1,8 @@
 import cardioGrade from "./cardioGrade.js"
 
 export default function resultChart(myCardioData, aveData) {
-    
 const selecGender = Form.querySelector("#selecGender");
 const selecAge = Form.querySelector("#selecAge");
-
 // 동일 연령별 및 성별 평균 값
 if (selecGender.value === "남성") {
     (selecAge.value === "20") ? (aveData = 47.1)
@@ -29,16 +27,13 @@ if (!selecGender.value && !selecAge.value) {
     aveData = 0, myCardioData = 0
 };
 
-// 심폐체력 등급
-// 
-
-////////////////////
 // D3 js
 let width = 120;
 let height = 90;
 
-const data = [];
-cardioGrade(selecGender, selecAge, myCardioData, data)
+const dataGrade = [];
+cardioGrade(selecGender, selecAge, myCardioData, dataGrade)
+
 const colors = ['#ffffcc','#c2e699','#78c679','#31a354','#006837'];
 
 const svg = d3.select(".canvas_grade")
@@ -47,7 +42,7 @@ const svg = d3.select(".canvas_grade")
             .attr("height", height);
 
 const g = svg.selectAll("g")
-            .data(data)
+            .data(dataGrade)
             .enter()
             .append("g")
             // .attr("transform", function(d, i) {
@@ -68,8 +63,7 @@ const g = svg.selectAll("g")
       .attr("text-anchor", "middle")
       .attr("fill", "#fff")
       .attr("font-size", "1.5rem")
-      .text(data);
-//////////////
+      .text(dataGrade);
 
 // Gauge chart
 const config = {
@@ -78,9 +72,15 @@ const config = {
     labels: ['매우부족', '부족', '보통', '우수', '매우우수'],
     datasets: [{
       data: ['10', '20', '30', '40', '50'],
-      value: 15,
+      value: 
+      (dataGrade.includes("매우 우수")) ? 45 :
+      (dataGrade.includes("우수")) ? 35 :
+      (dataGrade.includes("보통")) ? 25 :
+      (dataGrade.includes("부족")) ? 15 :
+      (dataGrade.includes("매우 부족")) ? 5 :
+      console.log("입력 값 없음"),
       backgroundColor: ['#D7540B', '#F7955F', '#FFCD56', '#BFD0EB', '#89A6DB'],
-      borderWidth: 2
+      borderWidth: 3
     }]
   },
   options: {
@@ -115,15 +115,14 @@ const config = {
         color: 'rgba(0, 0, 0, 1.0)',
         backgroundColor: null,
         font: {
-          size: 18,
-          // weight: 'bold'
+          size: 17
         }
       }
     }
   }
 };
 
-const gaugeGrade = new Chart(document.getElementById('gaugeChart').getContext('2d'), config);
+const gaugeChart = new Chart(document.getElementById('gaugeChart').getContext('2d'), config);
 
 // Bar chart
 const barLabels = ['내 결과', `${selecAge.value}대 ${selecGender.value} 적정 수준`];
