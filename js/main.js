@@ -37,4 +37,17 @@ btnSubmit.addEventListener("click", (e) => {
         alert('체력 등급 확인하러 갑시다!')
         console.log("해당사항 없음.");
     }
+});
+
+const txtEffect = new IntersectionObserver((e) => {
+    if (e[0].isIntersecting) {
+        e[0].target.style.opacity = 1;
+        e[0].target.style.transform = "translateZ(0)";
+    } else {
+        e[0].target.style.opacity = 0;
+        e[0].target.style.transform = "translate3d(0, 40%, 0)";
+    }
 })
+
+const txtGroup = document.querySelector(".txt_group");
+txtEffect.observe(txtGroup)

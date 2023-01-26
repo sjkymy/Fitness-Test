@@ -4,8 +4,9 @@
 
 :root {
     --mainColor: #ed6f63;
-    --backgroundColor: #263343;
-    --textColor: #f0f4f5;
+    --backgroundColor: #FAFAFA;
+    --textColorBlack: #263343;
+    --textColorWhite: #f0f4f5;
 }
 
 html {
@@ -121,20 +122,36 @@ html {
 .sec_cardio {
     /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bodyprofile.png");
     background-size: cover; */
-    background: orange;
-    height: 600px;
+    background: var(--backgroundColor);
+    height: 500px;
     /* padding: 100px 0; */
     color: black;
-    font-size: 3em;
+    font-size: 2.5rem;
     line-height: 2;
     text-align: center;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+} */
+
 .sec_cardio .txt_group {
-    display: inline-block;
-    background: green;
-    margin-top: 150px;
+    position: relative;
+    /* animation: fadeInUp 1.7s; */
+    /* opacity: 0;
+    transform: translate3d(0, 40%, 0); */
+    transition: all 2s;
 }
 
 .sec_cardio .txt_group p strong {
@@ -157,6 +174,13 @@ html {
     box-shadow: 3px 3px 5px var(--mainColor);;
 }
 
+.sec_cardio_health {
+    background: #e7948d;
+    height: 100vh;
+}
+
+
+
 @media (max-width: 857px) {
     .menu {
         flex-direction: column;
@@ -170,7 +194,7 @@ html {
         align-items: center;
         width: 100%;
         display: none;
-        color: var(--textColor);
+        color: var(--textColorWhite);
     }
 
     .link_icon {
@@ -198,5 +222,9 @@ html {
     .sec_home {
         height: auto;
         padding: 10px 0 70px;
+    }
+
+    .sec_cardio {
+        font-size: 2rem;
     }
 }

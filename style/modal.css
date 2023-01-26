@@ -1,5 +1,6 @@
 :root {
-    --mainColor: #ed6f63
+    --mainColor: #ed6f63;
+    --backgroundColor: #FAFAFA;
 }
 
 .modal {
@@ -25,7 +26,7 @@
 
 .modalBox {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--backgroundColor);
     width: 90%;
     max-width: 800px;
     height: auto;
