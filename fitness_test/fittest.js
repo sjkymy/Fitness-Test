@@ -1,7 +1,7 @@
 import resultChart from "./chart.js";
 
-const Form = document.querySelector("#Form")
-const inpGroup = Form.querySelector(".twelve")
+const Form = document.querySelector("#Form");
+const inpGroup = Form.querySelector(".twelve");
 const inpTwelve = Form.querySelector("#twelveRun");
 const voMax = Form.querySelector("#inpVoMax");
 const btnSubmit = Form.querySelector("#btnSubmit");

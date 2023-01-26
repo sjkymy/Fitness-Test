@@ -1,4 +1,4 @@
-import cardioGrade from "./cardioGrade.js"
+import cardioGrade from "./cardioGrade.js";
 
 export default function resultChart(myCardioData, aveData) {
 const selecGender = Form.querySelector("#selecGender");
@@ -34,7 +34,7 @@ let height = 90;
 const dataGrade = [];
 cardioGrade(selecGender, selecAge, myCardioData, dataGrade)
 
-const colors = ['#ffffcc','#c2e699','#78c679','#31a354','#006837'];
+const colors = ['#D7540B','#F7955F','#FFCD56','#BFD0EB','#89A6DB'];
 
 const svg = d3.select(".canvas_grade")
             .append("svg")
@@ -45,23 +45,27 @@ const g = svg.selectAll("g")
             .data(dataGrade)
             .enter()
             .append("g")
-            // .attr("transform", function(d, i) {
-            //     return "translate(0,0)";
-            // })
 
     g.append("rect")
       .attr("x", 0)
       .attr("y", 20)
       .attr("width", width)
       .attr("height", 50)
-      .attr("fill", "red")
+      .attr("fill", 
+        (dataGrade.includes("매우 우수")) ? "#89A6DB" :
+        (dataGrade.includes("우수")) ? "#BFD0EB" :
+        (dataGrade.includes("보통")) ? "#FFCD56" :
+        (dataGrade.includes("부족")) ? "#F7955F" :
+        (dataGrade.includes("매우 부족")) ? "#D7540B" :
+        console.log("입력 값 없음")
+      )
 
     g.append("text")
       .attr("class", "txt_circle")
       .attr("x", 60)
       .attr("y", 54)
       .attr("text-anchor", "middle")
-      .attr("fill", "#fff")
+      .attr("fill", "#263343")
       .attr("font-size", "1.5rem")
       .text(dataGrade);
 
@@ -187,7 +191,7 @@ P2.appendChild(txtResult2);
 barComment.append(P2);
 
 P3.classList.add("result_p3");
-const txtResult3 = document.createTextNode(`▶ 회원님의 체력 수준은 5개의 등급 중 ${dataGrade[0]}입니다.`);
+const txtResult3 = document.createTextNode(`▶ 회원님의 체력 수준은 5개의 등급 중 '${dataGrade[0]}' 수준 입니다.`);
 P3.appendChild(txtResult3);
 gaugeComment.append(P3);
 };
