@@ -9,6 +9,7 @@ toggleBtn.addEventListener("click", () => {
 
 const modalOpen = () => {
     document.querySelector(".modal").classList.remove("hidden");
+    // 모달창 뒷 배경 스크롤 막기
     document.body.style= `overflow: hidden`;
 }
 
@@ -45,7 +46,7 @@ const txtEffect = new IntersectionObserver((e) => {
         e[0].target.style.transform = "translateZ(0)";
     } else {
         e[0].target.style.opacity = 0;
-        e[0].target.style.transform = "translate3d(0, 40%, 0)";
+        e[0].target.style.transform = "translate3d(0, 70%, 0)";
     }
 })
 
