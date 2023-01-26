@@ -9,6 +9,7 @@ toggleBtn.addEventListener("click", () => {
 
 const modalOpen = () => {
     document.querySelector(".modal").classList.remove("hidden");
+    document.body.style= `overflow: hidden`;
 }
 
 const modalClose = () => {
@@ -33,7 +34,7 @@ btnSubmit.addEventListener("click", (e) => {
     if (result.length >= 1) {
         confirm("지금 운동 못해요")
     } else {
-        alert('넘어갑시다.')
+        alert('체력 등급 확인하러 갑시다!')
         console.log("해당사항 없음.");
     }
 })

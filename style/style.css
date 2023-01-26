@@ -119,20 +119,22 @@ html {
 }
 
 .sec_cardio {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bodyprofile.png");
-    background-size: cover;
-    height: 100vh;
-    padding: 200px 0;
-    position: relative;
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bodyprofile.png");
+    background-size: cover; */
+    background: orange;
+    height: 600px;
+    /* padding: 100px 0; */
+    color: black;
+    font-size: 3em;
+    line-height: 2;
     text-align: center;
     gap: 60px;
 }
 
-.sec_cardio .txt_group p{
-    color: #fff;
-    font-size: 3em;
-    line-height: 2;
-    
+.sec_cardio .txt_group {
+    display: inline-block;
+    background: green;
+    margin-top: 150px;
 }
 
 .sec_cardio .txt_group p strong {
