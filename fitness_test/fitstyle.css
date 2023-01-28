@@ -90,6 +90,10 @@ option {
     justify-content: center;
 }
 
+.cont-result-loading{
+    display: none;
+}
+
 .canvas_grade {
     margin-left: 50px;
 }
