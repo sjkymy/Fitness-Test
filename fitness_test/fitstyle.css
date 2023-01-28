@@ -92,6 +92,41 @@ option {
 
 .cont-result-loading{
     display: none;
+    margin: 70px auto;
+    position: relative;
+    height: 20px;
+    width: 90%;
+    max-width: 400px;
+    border: 3px solid var(--mainColor);
+    border-radius: 15px;
+}
+
+.cont-result-loading .progress_bar{
+    position: absolute;
+    background-color: var(--backgroundColor);
+    width: 0px;
+    height: 15px;
+    border-radius: 15px;
+    -webkit-animation: progres 2s infinite linear;
+            animation: progres 2s infinite linear;   
+}
+
+@keyframes progres{
+    0%{
+      width: 0%;
+    }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
+    100%{
+        width: 100%;
+    }
 }
 
 .canvas_grade {

@@ -21,6 +21,7 @@
 <body>
     <div class="wrapper">
         <form id="Form">
+            <!-- 정보 입력 -->
             <div class="gender_age_group">
                 <p class="tit_gender">성별을 선택하세요</p>
                 <select name="gender" id="selecGender">
@@ -43,14 +44,16 @@
                 <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 4)" placeholder="예) 3000" />미터(m)
             </div>
             <button id="btnSubmit">결과보기</button>
+            <!-- //정보 입력 -->
 
             <!-- 결과 로딩 화면 -->
             <section class="cont-result-loading">
-                <h2 class="blind">결과 확인 로딩중</h2>
-                <img class="img-rotate" src="img/loading.png" alt="" />
+                <h2 class="ir">결과 확인 로딩중</h2>
+                <div class="color"></div>
             </section>
             <!-- //결과 로딩 화면 -->
 
+            <!-- 결과 화면 -->
             <section class="vo2_max">
                 <div class="inp_result">
                     <label for="inpVoMax">나의 <strong>VO<sub>2max</sub></strong> 결과</label>
@@ -69,6 +72,7 @@
                 </div>
                 <div class="gauge_comment"></div>
             </section>
+            <!-- //결과 화면 -->
         </form>
     </div>
     <script type="module" src="FitTest.js"></script>
