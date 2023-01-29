@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <title>브루스카디오</title>
 </head>
 
@@ -22,7 +22,7 @@
                 <h1 class="logo"><img src="./assets/logo.png" alt="체력수준 평가 사이트 로고 브루스카디오"></h1>
                 <ul class="menu_list">
                     <li><a href="#">심폐체력 검사하기</a></li>
-                    <li><a href="#">심폐체력이란?</a></li>
+                    <li><a href="#VO2maxSection">심폐체력이란?</a></li>
                     <li><a href="#">건강정보</a></li>
                 </ul>
                 <ul class="link_icon">
@@ -32,15 +32,16 @@
                 <a href="#" class="btn_toggle"><i class="fa-solid fa-bars"></i></a>
             </nav>
         </header>
+        
         <main class="container">
-            <section class="sec_home">
+            <section class="sec_home" id="home">
                 <h2 class="title">지금 당신의 <strong>체력수준</strong>을 확인해보세요!</h2>
                 <button class="btn_start" id="btnStart">시작하기</button>
                 <p>기본 헬스 어플 이용한 체력측정</p>
                 <p>연령, 성별 대비 체력 수준 비교</p>
                 <p>목적에 맞는 운동처방까지!</p>
             </section>
-    </div>
+    
             <section class="sec_cardio">
                 <h2 class="ir">왜 심폐체력인가?</h2>
                 <div class="txt_group" id="txtGroup">
@@ -49,17 +50,17 @@
                     <p>더 중요한 <strong class="pointword">심폐체력</strong></p>
                 </div>
             </section>
-            <section class="sec_cardio_desc">
+            <section class="sec_cardio_desc" id="VO2maxSection">
                 <div class="tit_group">
                     <h2 class="sec_desc_title">최대산소섭취량을 향상 시키자!</h2>
                     <p>심폐체력 지표로 사용되는 <strong>'최대산소섭취량'</strong></p>
-                    <p>건강상태를 예측하는 중요한 지표입니다 </p>
+                    <p>건강상태를 예측하는 중요한 지표입니다.</p>
                     <!-- <p>건강상태 예측 변수 <strong>'최대산소섭취량'</strong>을 분석해 상태를 확인!</p> -->
                 </div>
                 <div class="effect_group">
                     <div class="effect one">
                         <h3>최대산소섭취량이 낮으면</h3>
-                        <p>심혈관질환 위험 현저히 증가</p>
+                        <p>심혈관질환 위험 증가</p>
                         <img src="./assets/ECG.jpg" alt="">
                     </div>
                     <div class="effect two">
@@ -70,13 +71,13 @@
                 </div>
             </section>
         </main>
-
+    
         <!-- 모달창 -->
         <article class="modal hidden">
             <div class="bg"></div>
             <form class="modalBox">
                 <h2>운동 참여 전 설문지</h2>
-                <p class="msg-notice">아래 <strong>6개</strong>의 질문을 주의 깊게 읽고 해당되는 문항의 체크박스에 표시하세요.</p>
+                <p class="msg-notice">아래 6개의 질문을 주의 깊게 읽고 해당되는 문항의 체크박스에 표시하세요.</p>
 
                 <div class="que_group">
                     <label for="inpQ1">1. 현재 심장질환 혹은 만성질환(고혈압, 당뇨 등)이 있다.</label>
@@ -89,7 +90,7 @@
                 </div>
         
                 <div class="que_group">
-                    <label for="inpQ3">3. 일상활동 중 또는 신체활동(운동)을 할 때 가슴에 통증이 생기는 경우가 있다.</label>
+                    <label for="inpQ3">3. 일상생활에서 혹은 신체활동(운동)을 할 때 가슴에 통증이 생기는 경우가 있다.</label>
                     <input type="checkbox" name="riskCheck" value="yes" id="inpQ3">
                 </div>
         
@@ -110,12 +111,12 @@
                 
                 <!-- <button class="btn_close">✖</button> -->
                 <div class="btn_group">
-                    <button class="btn_position" id="btnSubmit">제출하기</button>
                     <button class="btn_position" id="btnClose">취소</button>
+                    <button class="btn_position" id="btnSubmit">제출하기</button>
                 </div>
             </form>
         </article>
-        
+    </div>
     <script src="./js/main.js"></script>
 </body>
 

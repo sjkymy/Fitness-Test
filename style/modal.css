@@ -32,7 +32,6 @@
     height: auto;
     padding: 15px;
     border-radius: 10px;
-    border: 2px solid var(--mainColor);
 }
 
 .modalBox h2 {

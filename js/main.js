@@ -1,8 +1,19 @@
 const toggleBtn = document.querySelector(".btn_toggle");
 const navMenu = document.querySelector(".menu_list");
 const navIcon = document.querySelector(".link_icon");
+const topBar = document.querySelector(".topbar");
 
-toggleBtn.addEventListener("click", () => {
+window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+    if (value >= 100) {
+        topBar.style = "background-color: #333333";
+    } else {
+        topBar.style = "background-color: none";
+    }
+})
+
+toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     navMenu.classList.toggle("active");
     navIcon.classList.toggle("active");
 })
@@ -15,6 +26,7 @@ const modalOpen = () => {
 
 const modalClose = () => {
     document.querySelector(".modal").classList.add("hidden");
+    document.body.style= `overflow: scroll`;
 }
 
 const modalOpenBtn = document.querySelector("#btnStart");
@@ -31,7 +43,6 @@ btnSubmit.addEventListener("click", (e) => {
     const Inputs = 'input[name="riskCheck"]:checked';
     const result = modalBox.querySelectorAll(Inputs);
     e.preventDefault()
-
     if (result.length >= 1) {
         confirm("지금 운동 못해요")
     } else {
