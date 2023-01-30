@@ -11,6 +11,7 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 strong {
@@ -20,7 +21,6 @@ strong {
 
 .topbar {
     width: 100%;
-    /* background-color: #333333; */
     z-index: 10;
     position: fixed;
     top: 0;
@@ -41,7 +41,7 @@ strong {
 .menu .logo img {
     width: 130px;
     cursor: pointer;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .menu a {
@@ -181,7 +181,7 @@ strong {
 .tit_group p {
     text-align: center;
     color: var(--textColorWhite);
-    font-size: 0.5em;
+    font-size: 0.6em;
     margin-top: 10px;
     line-height: 1.5;
     word-break: keep-all;
@@ -225,18 +225,86 @@ strong {
     margin-top: 30px;
 }
 
+.sec_measure {
+    position: relative;
+    background-image: url(../assets/stretching.jpg);
+    background-size: cover;
+    background-position: center;
+    font-size: 3.5rem;
+    height: 100vh;
+    color: var(--textColorWhite);
+    padding: 0 10px;
+}
+
+.sec_measure::before {
+    content: ' ';
+    background: linear-gradient(to right, black, transparent);
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 70%;
+}
+
+.twelve_title {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    font-weight: bold;
+    animation: slide 2s ease-out;
+    /* background-color: green; */
+}
+
+.twelve_intro {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    font-size: 0.6em;
+    word-break: keep-all;
+    line-height: 1.25;
+    animation: slide 2s ease-out;
+}
+
+.twelve_desc {
+    position: absolute;
+    width: 80%;
+    max-width: 28em;
+    left: 10%;
+    top: 37%;
+    font-size: 0.6em;
+    line-height: 1.25;
+    background-color: #f0f0f0;
+    color: var(--textColorBlack);
+    padding: 10px;
+    border-radius: 10px;
+    word-break: keep-all;
+    box-shadow: 3px 3px 10px black;
+}
+
+@keyframes slide {
+    from {
+        left: -10%;
+        opacity: 0;
+    }
+    to {
+        left: 10%;
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        left: 10%;
+        opacity: 1;
+    }
+    to {
+        left: -10%;
+        opacity: 0;
+    }
+}
+
 
 
 @media (max-width: 857px) {
-    /* .wrapper {
-        background-position: center;
-    } */
-
-    /* .topbar {
-        position: static;
-        top: 0;
-    } */
-
     .sec_home {
         background-position: center;
     }
@@ -284,10 +352,6 @@ strong {
         font-size: 2rem;
     }
 
-    /* .sec_desc_title {
-        font-size: 3rem;
-    } */
-
     .tit_group {
         font-size: 2.3rem;
     }
@@ -305,5 +369,31 @@ strong {
 
     .effect h3 {
         font-size: 2rem;
+    }
+
+    .sec_measure {
+        font-size: 3rem;
+    }
+
+    .sec_measure::before {
+        background: linear-gradient(to bottom, var(--textColorBlack), transparent);
+        height: 70%;
+        width: 100%;
+    }
+
+    .twelve_title, .twelve_intro, .twelve_desc {
+        left: auto;
+    }
+
+    .twelve_title {
+        top: 5%;
+    }
+
+    .twelve_intro {
+        top: 15%;
+    }
+
+    .twelve_desc {
+        top: 33%;
     }
 }
