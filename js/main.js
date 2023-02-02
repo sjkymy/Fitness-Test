@@ -2,7 +2,7 @@ const toggleBtn = document.querySelector(".btn_toggle");
 const navMenu = document.querySelector(".menu_list");
 const navIcon = document.querySelector(".link_icon");
 const topBar = document.querySelector(".topbar");
-const Main = document.querySelector(".container");
+const Main = document.querySelector("main");
 const twelveTitle = Main.querySelector(".twelve_title");
 const twelveIntro = Main.querySelector(".twelve_intro")
 const twelveDesc = Main. querySelector(".twelve_desc");
@@ -52,5 +52,4 @@ const txtEffect = new IntersectionObserver((e) => {
 })
 
 const txtGroup = document.querySelector(".txt_group");
-txtEffect.observe(txtGroup)
-
+txtEffect.observe(txtGroup);
