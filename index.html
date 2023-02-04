@@ -75,54 +75,41 @@
                 </div>
             </section>
             <section class="sec_measure" id="secMeasure">
-                    <h3 class="twelve_title">12분 달리기</h3>
-                    <p class="twelve_intro">12분 달리기 검사는 최대산소섭취량을 예측할 수 있어요!</p>
-                    <p class="twelve_desc">💡 12분 검사는 12분 안에 최대한 먼 거리를 이동하는 것입니다.</p>
+                <h3 class="twelve_title">12분 달리기</h3>
+                <p class="twelve_intro">12분 달리기 검사는 최대산소섭취량을 예측할 수 있어요!</p>
+                <p class="twelve_desc">💡 12분 검사는 12분 안에 최대한 먼 거리를 이동하는 것입니다.</p>
+            </section>
+            <section class="sec_contact">
+                <div class="content_group">
+                    <h3>출시 후 알림받기</h3>
+                    <form class="info_group">
+                        <label class="gender_label" for="gender">성별</label>
+                        <select class="gender_select" id="gender" required>
+                            <option selected>성별 선택</option>
+                            <option value="1">남성</option>
+                            <option value="2">여성</option>
+                        </select>
+                        <label class="age_label" for="age">나이</label>
+                        <select class="age_select" id="age" required>
+                            <option selected>연령대 선택</option>
+                            <option value="20">20대</option>
+                            <option value="30">30대</option>
+                            <option value="40">40대</option>
+                            <option value="50">50대</option>
+                            <option value="60">60대</option>
+                        </select>
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" placeholder="예) bruce@naver.com" required>
+
+                        <button class="contact_check">확인</button>
+                    </form>
+                </div>
             </section>
         </main>
     
         <!-- 모달창 -->
         <article id="modal" class="modal hidden">
             <div class="bg"></div>
-            <!-- <form class="modalBox">
-                <h2>운동 참여 전 설문지</h2>
-                <p class="msg-notice">아래 6개의 질문을 주의 깊게 읽고 해당되는 문항의 체크박스에 표시하세요.</p>
-
-                <div class="que_group">
-                    <label for="inpQ1">1. 현재 심장질환 혹은 만성질환(고혈압, 당뇨 등)이 있다.</label>
-                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ1">
-                </div>
-        
-                <div class="que_group">
-                    <label for="inpQ2">2. 1번 질문의 질환을 치료하기 위해 현재 복용 중인 약물이 있다.</label>
-                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ2">
-                </div>
-        
-                <div class="que_group">
-                    <label for="inpQ3">3. 일상생활에서 혹은 신체활동(운동)을 할 때 가슴에 통증이 생기는 경우가 있다.</label>
-                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ3">
-                </div>
-        
-                <div class="que_group">
-                    <label for="inpQ4">4. 지난 1년 동안 어지럼증으로 쓰러지거나 의식을 잃은 적이 있다.</label>
-                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ4">
-                </div>
-        
-                <div class="que_group">
-                    <label for="inpQ5">5. 일상활동 중 뼈, 관절, 연부조직(근육, 인대, 건)에 통증 혹은 불편감이 있다.</label>
-                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ5">
-                </div>
-        
-                <div class="que_group">
-                    <label for="inpQ6">6. 의사에게 의료진 없이 운동을 하면 안된다고 들은 적이 있다.</label>
-                    <input type="checkbox" name="riskCheck" value="yes" id="inpQ6">
-                </div>
-                
-                <div class="btn_group">
-                    <button class="btn_position" id="btnClose">취소</button>
-                    <button class="btn_position" id="btnSubmit">제출하기</button>
-                </div>
-            </form> -->
         </article>
         <!-- //모달창 -->
     </div>

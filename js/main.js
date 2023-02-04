@@ -7,16 +7,17 @@ const twelveTitle = Main.querySelector(".twelve_title");
 const twelveIntro = Main.querySelector(".twelve_intro")
 const twelveDesc = Main. querySelector(".twelve_desc");
 
-// 스크롤 내리면 상단바 배경색 변경
 window.addEventListener("scroll", () => {
     let value = window.scrollY;
-    // console.log(value);
+
+    // 스크롤 내리면 상단바 배경색 변경
     if (value >= 100) {
         topBar.style = "background-color: #333333";
     } else {
         topBar.style = "background-color: none";
     };
 
+    // 스크롤 내리면 텍스트 나타나기
     if (value <= 1519) {
         twelveTitle.style.animation = "disappear 1.5s ease-out forwards";
         twelveIntro.style.animation = "disappear 1.5s ease-out forwards";
@@ -32,7 +33,7 @@ window.addEventListener("scroll", () => {
     };
 })
 
-// 모바일 화면에서 메뉴 버튼 클릭하면 콘텐츠 나타나기
+// 모바일 화면에서 토글 버튼을 클릭하면 메뉴 나타나기
 toggleBtn.addEventListener("click", (e) => {
     e.preventDefault()
     navMenu.classList.toggle("active");
@@ -40,7 +41,7 @@ toggleBtn.addEventListener("click", (e) => {
     topBar.style = "background-color: #333333"
 })
 
-// 텍스트 애니메이션
+// 두 번째 section 텍스트 애니메이션
 const txtEffect = new IntersectionObserver((e) => {
     if (e[0].isIntersecting) {
         e[0].target.style.opacity = 1;

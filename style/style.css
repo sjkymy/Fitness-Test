@@ -4,7 +4,7 @@
 
 :root {
     --mainColor: #ed6f63;
-    --backgroundColor: #f0f0f0;
+    --backgroundColor: #f9fafb;
     --textColorBlack: #263343;
     --textColorWhite: #f0f4f5;
 }
@@ -98,16 +98,16 @@ strong {
 .sec_home .btn_start {
     display: inline-block;
     width: 70%;
-    max-width: 300px;
+    max-width: 200px;
     font-size: 0.5em;
     text-decoration: none;
     color: #fff;
     background: var(--mainColor);
     margin: 50px 0 80px;
     padding: 1em;
-    border-radius: 30px;
+    border-radius: 15px;
     font-weight: bold;
-    box-shadow: 3px 5px 0 rgba(0,0,0,0.3),3px 5px 0 #ff3333 ,8px 7px 0 2px rgba(0,0,0,0.24);
+    /* box-shadow: 3px 5px 0 rgba(0,0,0,0.3),3px 5px 0 #ff3333 ,8px 7px 0 2px rgba(0,0,0,0.24); */
     transition: background 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -271,12 +271,61 @@ strong {
     top: 37%;
     font-size: 0.6em;
     line-height: 1.25;
-    background-color: #f0f0f0;
+    background-color: #f9fafb;
     color: var(--textColorBlack);
     padding: 10px;
     border-radius: 10px;
     word-break: keep-all;
     box-shadow: 3px 3px 10px black;
+}
+
+.sec_contact {
+    background-color: #f9fafb;
+    height: 600px;
+    overflow: hidden;
+}
+
+.content_group {
+    /* background-color: green; */
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+.sec_contact h3 {
+    text-align: center;
+    margin: 100px 0 50px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.info_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.info_group label {
+    margin: 20px 0 10px;
+    font-size: 1.8rem;
+}
+
+.info_group select, .info_group input {
+    padding: 0.5em 0.8em;
+    font-size: 1.5rem;
+    border: 1px solid var(--textColorBlack);
+    border-radius: 5px;
+}
+
+.info_group .contact_check {
+    background: var(--textColorBlack);
+    color: var(--textColorWhite);
+    margin: 30px auto 0;
+    font-size: 1.8rem;
+    width: 50%;
+    padding: 1em;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 @keyframes slide {

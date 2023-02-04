@@ -93,12 +93,14 @@ const modalOpen = () => {
 const modalOpenBtn = document.querySelector("#btnStart");
 modalOpenBtn.addEventListener("click", modalOpen);
 
+
 const modalClose = () => {
     Modal.classList.add("hidden");
     document.body.style= `overflow: scroll`;
 };
 
-const modalCloseBtn = Modal.querySelector("#btnClose");
+// 블로그
+const modalCloseBtn = document.querySelector("#btnClose");
 if (modalCloseBtn) {
     modalCloseBtn.addEventListener("click", modalClose);
-};
+}
