@@ -281,43 +281,42 @@ strong {
 
 .sec_contact {
     background-color: #f9fafb;
-    height: 600px;
+    height: auto;
     overflow: hidden;
+    padding: 10px 0 30px;
 }
 
 .content_group {
-    /* background-color: green; */
-    width: 70%;
+    width: 85%;
     max-width: 400px;
     margin: 0 auto;
-
 }
 
 .sec_contact h3 {
     text-align: center;
-    margin: 100px 0 50px;
+    margin: 90px 0 40px;
     font-size: 3rem;
     font-weight: bold;
 }
 
-.info_group {
+.form_info {
     display: flex;
     flex-direction: column;
 }
 
-.info_group label {
+.form_info .check_label {
     margin: 20px 0 10px;
     font-size: 1.8rem;
 }
 
-.info_group select, .info_group input {
+.form_info select, .form_info .inp_email {
     padding: 0.5em 0.8em;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     border: 1px solid var(--textColorBlack);
     border-radius: 5px;
 }
 
-.info_group .contact_check {
+.form_info .contact_check {
     background: var(--textColorBlack);
     color: var(--textColorWhite);
     margin: 30px auto 0;
@@ -326,6 +325,45 @@ strong {
     padding: 1em;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.agree_group {
+    margin: 30px 0 0;
+    display: flex;
+}
+
+.agree_group input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    box-shadow: inset 1px 1px 4px;
+}
+
+.agree_group label {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.agree_box p {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.agree_box table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.2;
+    vertical-align: middle;
 }
 
 @keyframes slide {

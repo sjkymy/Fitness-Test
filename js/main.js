@@ -40,6 +40,7 @@ toggleBtn.addEventListener("click", (e) => {
     navIcon.classList.toggle("active");
     topBar.style = "background-color: #333333"
 })
+//
 
 // 두 번째 section 텍스트 애니메이션
 const txtEffect = new IntersectionObserver((e) => {
@@ -54,3 +55,5 @@ const txtEffect = new IntersectionObserver((e) => {
 
 const txtGroup = document.querySelector(".txt_group");
 txtEffect.observe(txtGroup);
+//
+

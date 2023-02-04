@@ -82,14 +82,14 @@
             <section class="sec_contact">
                 <div class="content_group">
                     <h3>출시 후 알림받기</h3>
-                    <form class="info_group">
-                        <label class="gender_label" for="gender">성별</label>
+                    <form class="form_info">
+                        <label class="check_label" for="gender">성별</label>
                         <select class="gender_select" id="gender" required>
                             <option selected>성별 선택</option>
                             <option value="1">남성</option>
                             <option value="2">여성</option>
                         </select>
-                        <label class="age_label" for="age">나이</label>
+                        <label class="check_label" for="age">나이</label>
                         <select class="age_select" id="age" required>
                             <option selected>연령대 선택</option>
                             <option value="20">20대</option>
@@ -98,9 +98,31 @@
                             <option value="50">50대</option>
                             <option value="60">60대</option>
                         </select>
-                        <label for="email">이메일</label>
-                        <input type="email" id="email" placeholder="예) bruce@naver.com" required>
-
+                        <label class="check_label" for="email">이메일</label>
+                        <input class="inp_email" type="email" id="email" placeholder="예) bruce@naver.com" required>
+                        <div class="agree_group">
+                            <input type="checkbox" id="information" required>
+                            <label for="information">[필수] 개인정보 수집 및 활용 동의</label>
+                        </div>
+                        <div class="agree_box">
+                            <p>서비스 출시 알림을 위해 아래와 같이 개인정보를 수집 및 이용합니다.</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>개인정보 수집 및 이용목적</th>
+                                        <td>출시 알림 신청</td>
+                                    </tr>
+                                    <tr>
+                                        <th>수집하는 개인정보 항목</th>
+                                        <td>이메일</td>
+                                    </tr>
+                                    <tr>
+                                        <th>개인정보 보유 및 이용기간</th>
+                                        <td>출시 알림 전송 후 1개월 이내 폐기 (출시 알림 전송에 상관없이 신청 이후 3개월 이내 폐기)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <button class="contact_check">확인</button>
                     </form>
                 </div>
