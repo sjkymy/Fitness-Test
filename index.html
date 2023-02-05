@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <title>브루스카디오</title>
 </head>
 
@@ -86,8 +86,8 @@
                         <label class="check_label" for="gender">성별</label>
                         <select class="gender_select" id="gender" required>
                             <option selected>성별 선택</option>
-                            <option value="1">남성</option>
-                            <option value="2">여성</option>
+                            <option value="m">남성</option>
+                            <option value="w">여성</option>
                         </select>
                         <label class="check_label" for="age">나이</label>
                         <select class="age_select" id="age" required>
@@ -122,8 +122,9 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <p>귀하는 서비스 이용에 필요한 최소한의 개임정보 수집 및 이용에 동의하지 않을 수 있으나, 동의를 거부 할 경우 서비스 이용이 불가합니다.</p>
                         </div>
-                        <button class="contact_check">확인</button>
+                        <button class="btn_contact">확인</button>
                     </form>
                 </div>
             </section>
@@ -137,6 +138,10 @@
     </div>
     <script src="./js/main.js"></script>
     <script src="./js/modal.js"></script>
+    <script type="module" src="./js/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- <script src="./js/contact.js"></script> -->
 </body>
 
 </html>

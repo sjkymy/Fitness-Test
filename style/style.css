@@ -316,7 +316,7 @@ strong {
     border-radius: 5px;
 }
 
-.form_info .contact_check {
+.form_info .btn_contact {
     background: var(--textColorBlack);
     color: var(--textColorWhite);
     margin: 30px auto 0;
