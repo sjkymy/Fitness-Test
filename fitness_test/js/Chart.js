@@ -1,8 +1,8 @@
 import cardioGrade from "./cardioGrade.js";
 
 export default function resultChart(myCardioData, aveData) {
-const selecGender = Form.querySelector("#selecGender");
-const selecAge = Form.querySelector("#selecAge");
+const selecGender = testForm.querySelector("#selecGender");
+const selecAge = testForm.querySelector("#selecAge");
 // 동일 연령별 및 성별 평균 값
 if (selecGender.value === "남성") {
     (selecAge.value === "20") ? (aveData = 47.1)
@@ -84,7 +84,8 @@ const config = {
       (dataGrade.includes("매우 부족")) ? 5 :
       console.log("입력 값 없음"),
       backgroundColor: ['#D7540B', '#F7955F', '#FFCD56', '#BFD0EB', '#89A6DB'],
-      borderWidth: 3
+      borderWidth: 3,
+      width: 120
     }]
   },
   options: {
@@ -169,7 +170,7 @@ const twelveBar = new Chart(document.getElementById('canvasBar'), config1);
 
 // 결과 안내문구
 const sectionChart = document.querySelector(".sec_chart");
-const divVomax = Form.querySelector(".vo2_max")
+const divVomax = testForm.querySelector(".vo2_max")
 const barComment = sectionChart.querySelector(".bar_comment")
 const gaugeComment = sectionChart.querySelector(".gauge_comment")
 const P1 = document.createElement("p");

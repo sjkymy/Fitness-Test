@@ -1,10 +1,10 @@
-import resultChart from "./chart.js";
+import resultChart from "./Chart.js";
 
-const Form = document.querySelector("#Form");
-const inpGroup = Form.querySelector(".twelve");
-const inpTwelve = Form.querySelector("#twelveRun");
-const voMax = Form.querySelector("#inpVoMax");
-const btnSubmit = Form.querySelector("#btnSubmit");
+const testForm = document.querySelector("#testForm");
+const inpGroup = testForm.querySelector(".twelve");
+const inpTwelve = testForm.querySelector("#twelveRun");
+const voMax = testForm.querySelector("#inpVoMax");
+const btnSubmit = testForm.querySelector("#btnSubmit");
 const loadingSection = document.querySelector(".cont-result-loading")
 
 // 숫자가 아니면 초기화하고 에러메세지 추가
@@ -28,7 +28,7 @@ btnSubmit.addEventListener("click", (e) => {
     // 로딩화면이 보이고 2초 뒤에 결과 나타나기.
     setTimeout(function() {
         loadingSection.style.display = "none";
-
+        
         voMax.value = ((inpTwelve.value - 504.9)/44.73).toFixed(1);
         const maxValue = voMax.value;
         if (!inpTwelve.value) {
@@ -36,7 +36,7 @@ btnSubmit.addEventListener("click", (e) => {
             voMax.value = 0
             return
         }
-
+        
         // chart.js
         // HTML에 따로 js를 추가하려 했지만 버튼을 클릭하면 발생하는 이벤트이므로 버튼 클릭 이벤트에 import 했음.
         resultChart(maxValue)
