@@ -1,4 +1,5 @@
-import Dashboard from "./pages/Dashboard.js";
+// Expected a JavaScript module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec ---> 콘솔에서 오류 표시가 남. 파일 경로와 확장명을 정확하게 기입해야 함.
+import Home from "./pages/Home.js";
 import Posts from "./pages/Posts.js";
 import Settings from "./pages/Settings.js";
 import NotFound from "./pages/NotFound.js";
@@ -10,7 +11,7 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view: Dashboard },
+        { path: "/", view: Home },
         { path: "/posts", view: Posts },
         { path: "/settings", view: Settings },
         { path: "/404", view: NotFound }

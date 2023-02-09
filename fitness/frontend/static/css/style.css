@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 * {
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -16,16 +18,30 @@ sub {
     vertical-align: sub;
     font-size: smaller;
 }
-#app {
+/* #app {
     width: 100%;
     max-width: 700px;
     margin: 30px auto;
+} */
+
+#testForm {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-#Form label {
+#testForm legend {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#testForm label {
     display: block;
 }
-#Form input {
+#testForm input {
     display: inline-block;
 }
 
@@ -64,6 +80,7 @@ option {
     color: red;
 }
 
+/* input type number에서 오른쪽 숫자 증감버튼 지우기 */
 #twelveRun::-webkit-outer-spin-button,
 #twelveRun::-webkit-inner-spin-button {
   -webkit-appearance: none;

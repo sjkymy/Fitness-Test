@@ -9,8 +9,9 @@ export default class extends AbstractView {
     async getHtml() {
         return `
         <form id="testForm">
+            <legend>심폐체력 등급</legend>
             <!-- 정보 입력 -->
-            <div class="gender_age_group">
+            <section class="gender_age_group">
                 <p class="tit_gender">성별을 선택하세요</p>
                 <select name="gender" id="selecGender">
                     <option value='' selected>-- 성별 --</option>
@@ -26,11 +27,11 @@ export default class extends AbstractView {
                     <option value="50">50대</option>
                     <option value="60">60대</option>
                 </select>
-            </div>
-            <div class="twelve">
+            </section>
+            <section class="twelve">
                 <label for="twelveRun">12분 동안 몇 미터(m)를 달렸나요?</label>
                 <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 4)" placeholder="예) 3000" />미터(m)
-            </div>
+            </section>
             <button id="btnSubmit">결과보기</button>
             <!-- //정보 입력 -->
 
