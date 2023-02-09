@@ -1,0 +1,254 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --mainColor: #ed6f63;
+    --backgroundColor: #263343;
+    --textColor: #f0f4f5;
+}
+
+body {
+    background-color: #f5f6f7;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+#app {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+#Form label {
+    display: block;
+}
+#Form input {
+    display: inline-block;
+}
+
+.gender_age_group {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.tit_gender, .tit_age {
+    font-size: 1.2rem;
+}
+
+#selecGender, #selecAge {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 0.7em 0 2em;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1.5px solid #C4C4C4;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+#selecGender:focus, #selecAge:focus {
+    outline: 3px;
+    border: 2px solid var(--mainColor);
+}
+
+option {
+    text-align: center;
+}
+
+.temp_error {
+    color: red;
+}
+
+#twelveRun::-webkit-outer-spin-button,
+#twelveRun::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.twelve, .vo2_max {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.twelve label, .vo2_max label {
+    font-size: 1.2rem;
+}
+
+.vo2_max {
+    display: none;
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+}
+
+.cont-result-loading{
+    display: none;
+    margin: 70px auto;
+    position: relative;
+    height: 20px;
+    width: 90%;
+    max-width: 400px;
+    border: 3px solid var(--mainColor);
+    border-radius: 15px;
+}
+
+.cont-result-loading .progress_bar{
+    position: absolute;
+    background-color: var(--backgroundColor);
+    width: 0px;
+    height: 15px;
+    border-radius: 15px;
+    -webkit-animation: progres 2s infinite linear;
+            animation: progres 2s infinite linear;   
+}
+
+@keyframes progres{
+    0%{
+      width: 0%;
+    }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.canvas_grade {
+    margin-left: 50px;
+}
+
+.txt_circle {
+    color: #fff;
+}
+
+#twelveRun {
+    width: 300px;
+    font-size: 1.3rem;
+    padding: 0 0 0.2em 1em;
+    margin: 1em 0;
+    border: none;
+    background-color: #f5f6f7;
+    border-bottom: 3px #DBDBDB solid;
+}
+
+.vo2_max {
+    text-align: center;
+    margin-top: 70px;
+}
+
+#inpVoMax {
+    text-align: center;
+    width: 100px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding: 0 0 0.2em 0;
+    margin: 0.4em 0;
+    border: none;
+    background-color: #f5f6f7;
+    border-bottom: 3px #DBDBDB solid;
+}
+
+#twelveRun:focus {
+    outline: none;
+    border-bottom: 3px var(--mainColor) solid;
+}
+
+#btnSubmit {
+    display: block;
+    width: 400px;
+    margin: 30px auto;
+    border-radius: 44px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px;
+    color: var(--textColor);
+    background: var(--mainColor);
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.sec_chart {
+    margin-top: 30px;
+}
+
+.chart_bar {
+    max-width: 500px;
+    padding: 0 5px;
+    margin: 0 auto;
+}
+
+.chart_gauge {
+    /* max-width: 500px; */
+    padding: 0 5px;
+    margin-top: 50px;
+}
+
+.bar_comment {
+    /* max-width: 500px; */
+    margin-top: 25px;
+    font-size: 1.2rem;
+    padding: 0 10px 0 100px;
+    line-height: 1.2;
+    /* text-align: center; */
+}
+
+.bar_comment .result_p1 {
+    margin-bottom: 18px;
+}
+
+.gauge_comment {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+@media (max-width: 460px) {
+    #twelveRun {
+        width: 10em;
+        padding: 0 0 0.2em 1em;
+    }
+
+    #btnSubmit {
+        width: 80%;
+    }
+
+    .show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .canvas_grade {
+        margin-left: 0;
+    }
+
+    .bar_comment {
+        margin-top: 30px;
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .gauge_comment {
+        margin-top: 30px;
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
