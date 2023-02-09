@@ -1,8 +1,9 @@
 import resultChart from "./Chart.js";
+import Posts from "../pages/Posts.js";
 
 // Uncaught TypeError: Cannot read property 'addEventListener' of null 오류로 인해 웹브라우저의 모든 콘텐츠 로드가 끝났을 때 호출되도록 window.onload = function(){} 사용
 
-window.onload = function() {
+Posts.onload = function() {
     const testForm = document.querySelector("#testForm");
     const inpGroup = testForm.querySelector(".twelve");
     const inpTwelve = testForm.querySelector("#twelveRun");
