@@ -4,7 +4,7 @@ export default class {
     }
     async getHtml() {
         return `
-            <h1>404 Not found</h1>
+            <h1>여기는 404</h1>
         `;
     }
 }

@@ -1,4 +1,5 @@
 import AbstractView from "./AbstractView.js";
+// import AbstractView from "../components/FitTest";
 
 export default class extends AbstractView {
     constructor() {
@@ -62,7 +63,7 @@ export default class extends AbstractView {
                 <div class="gauge_comment"></div>
             </section>
             <!-- //결과 화면 -->
-        </form>
+        </form>        
         `;
     };
 };

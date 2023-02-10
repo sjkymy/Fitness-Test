@@ -27,7 +27,7 @@ export default class extends AbstractView {
         <main>
             <section class="sec_home" id="home">
                 <h2 class="title">지금 당신의 <strong>체력수준</strong>을 확인해보세요!</h2>
-                <button class="btn_start" id="btnStart"><a href="/posts" class="nav__link" data-link>시작하기</a></button>
+                <a href="/posts" class="btn_start" data-link>시작하기</a>
                 <p>삼성 혹은 애플 운동앱을 켜고 12분 동안 달린 거리를 측정해보세요.</p>
                 <p>달린 거리를 입력하고 결과를 확인하세요.</p>
                 <p>연령, 성별 대비 체력 수준을 확인할 수 있어요.</p>

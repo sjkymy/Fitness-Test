@@ -123,11 +123,11 @@ option {
     width: 0px;
     height: 15px;
     border-radius: 15px;
-    -webkit-animation: progres 2s infinite linear;
-            animation: progres 2s infinite linear;   
+    -webkit-animation: progress 2s infinite linear;
+            animation: progress 2s infinite linear;   
 }
 
-@keyframes progres{
+@keyframes progress{
     0%{
       width: 0%;
     }
@@ -210,18 +210,15 @@ option {
 }
 
 .chart_gauge {
-    /* max-width: 500px; */
     padding: 0 5px;
     margin-top: 50px;
 }
 
 .bar_comment {
-    /* max-width: 500px; */
     margin-top: 25px;
     font-size: 1.2rem;
     padding: 0 10px 0 100px;
     line-height: 1.2;
-    /* text-align: center; */
 }
 
 .bar_comment .result_p1 {

@@ -4,11 +4,6 @@ import Posts from "./pages/Posts.js";
 import Settings from "./pages/Settings.js";
 import NotFound from "./pages/NotFound.js";
 
-const navigateTo = url => {
-    history.pushState(null, null, url);
-    router();
-}
-
 const router = async () => {
     const routes = [
         { path: "/", view: Home },
@@ -39,6 +34,11 @@ const router = async () => {
     }
 };
 
+const navigateTo = url => {
+    history.pushState(null, null, url);
+    router();
+}
+
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,6 +48,5 @@ document.addEventListener("DOMContentLoaded", () => {
             navigateTo(e.target.href);
         }
     });
-
     router();
 })
