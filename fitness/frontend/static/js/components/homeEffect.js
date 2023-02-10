@@ -1,7 +1,7 @@
 import Home from "../pages/Home.js";
 import firebaseSet from "./Firebase.js"
 
-window.onload = function() {
+export default function homeEffect() {
     const toggleBtn = document.querySelector(".btn_toggle");
     const navMenu = document.querySelector(".menu_list");
     const navIcon = document.querySelector(".link_icon");

@@ -3,11 +3,13 @@ import Home from "./pages/Home.js";
 import Posts from "./pages/Posts.js";
 import Settings from "./pages/Settings.js";
 import NotFound from "./pages/NotFound.js";
+import homeEffect from "./components/homeEffect.js";
+import fitTest from "./components/FitTest.js";
 
 const router = async () => {
     const routes = [
-        { path: "/", view: Home },
-        { path: "/posts", view: Posts },
+        { path: "/", view: Home, script: homeEffect },
+        { path: "/posts", view: Posts, script: fitTest },
         { path: "/settings", view: Settings },
         { path: "/404", view: NotFound }
     ];
@@ -32,6 +34,8 @@ const router = async () => {
         const view = new match.route.view();
         document.querySelector("#app").innerHTML = await view.getHtml();
     }
+
+    match.route.script();
 };
 
 const navigateTo = url => {
