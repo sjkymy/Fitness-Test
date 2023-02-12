@@ -18,11 +18,16 @@ sub {
     vertical-align: sub;
     font-size: smaller;
 }
-/* #app {
+
+.splash {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
-    max-width: 700px;
-    margin: 30px auto;
-} */
+    height: 100%;
+    background: url(../assets/logo.png) center no-repeat var(--backgroundColor);
+    background-size: 200px;
+}
 
 #testForm {
     width: 100%;
@@ -41,6 +46,7 @@ sub {
 #testForm label {
     display: block;
 }
+
 #testForm input {
     display: inline-block;
 }
@@ -113,11 +119,36 @@ option {
     height: 20px;
     width: 90%;
     max-width: 400px;
-    border: 3px solid var(--mainColor);
+    /* border: 3px solid var(--mainColor); */
     border-radius: 15px;
 }
 
-.cont-result-loading .progress_bar{
+.cont-result-loading .progress_bar {
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    overflow:hidden;
+    background: #ccc;
+    position:relative;
+}
+
+.cont-result-loading .progress_bar::after {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    height: 15px;
+    width:0;
+    background:teal;
+    animation: progress 2s ease forwards;
+}
+
+@keyframes progress{
+    0%{width: 0px}
+    100%{width: 100%;}
+  }
+
+/* .cont-result-loading .progress_bar{
     position: absolute;
     background-color: var(--backgroundColor);
     width: 0px;
@@ -125,6 +156,24 @@ option {
     border-radius: 15px;
     -webkit-animation: progress 2s infinite linear;
             animation: progress 2s infinite linear;   
+}
+
+@-webkit-keyframes progress {
+    0%{
+        width: 0%;
+    }
+    25%{
+        width: 50%;
+    }
+    50%{
+        width: 75%;
+    }
+    75%{
+        width: 85%;
+    }
+    100%{
+        width: 100%;
+    }
 }
 
 @keyframes progress{
@@ -143,7 +192,7 @@ option {
     100%{
         width: 100%;
     }
-}
+} */
 
 .canvas_grade {
     margin-left: 50px;

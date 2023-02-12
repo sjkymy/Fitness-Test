@@ -118,7 +118,7 @@ export default class extends AbstractView {
             </section>
         </main>
         <footer>
-            wer
+            <p>© 2023 BruceCardio. ALL RIGHTS RESERVED.</p>
         </footer>
         `;
     };

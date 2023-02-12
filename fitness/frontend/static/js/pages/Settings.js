@@ -8,8 +8,9 @@ export default class extends AbstractView {
 
     async getHtml() {
         return `
-            <h1>Hello World</h1>
-            <p>This is Settings</p>
+            <div class="splash">
+                <!-- <img src="../../assets/logo.png" alt="zz"> -->
+            </div>
         `;
     };
 }

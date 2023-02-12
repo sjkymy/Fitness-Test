@@ -1,5 +1,4 @@
 import AbstractView from "./AbstractView.js";
-// import AbstractView from "../components/FitTest";
 
 export default class extends AbstractView {
     constructor() {
@@ -9,6 +8,7 @@ export default class extends AbstractView {
 
     async getHtml() {
         return `
+        <div class="splash"></div>
         <form id="testForm">
             <legend>심폐체력 등급</legend>
             <!-- 정보 입력 -->
