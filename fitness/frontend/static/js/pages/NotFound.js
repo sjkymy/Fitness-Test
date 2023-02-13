@@ -5,6 +5,7 @@ export default class {
     async getHtml() {
         return `
             <h1>여기는 404</h1>
+            <i class="fa-solid fa-heart-crack"></i>
         `;
     }
 }

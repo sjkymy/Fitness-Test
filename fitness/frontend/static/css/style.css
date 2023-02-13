@@ -32,7 +32,7 @@ sub {
 #testForm {
     width: 100%;
     max-width: 700px;
-    margin: 30px auto;
+    margin: 30px auto 90px;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -114,13 +114,10 @@ option {
 
 .cont-result-loading{
     display: none;
-    margin: 70px auto;
+    margin: 30px auto;
     position: relative;
-    height: 20px;
     width: 90%;
     max-width: 400px;
-    /* border: 3px solid var(--mainColor); */
-    border-radius: 15px;
 }
 
 .cont-result-loading .progress_bar {
@@ -282,6 +279,32 @@ option {
     text-align: center;
 }
 
+.tab_bar {
+    width: 100%;
+    height: 40px;
+    max-width: 600px;
+    z-index: 10;
+    background-color: var(--textColor);    
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--backgroundColor);
+    line-height: 2.5;
+}
+
+.nav__link:hover {
+    background-color: #dfdddd;
+}
+
 
 @media (max-width: 460px) {
     #twelveRun {
@@ -291,6 +314,11 @@ option {
 
     #btnSubmit {
         width: 80%;
+        margin: 20px auto;
+    }
+
+    .vo2_max {
+        margin-top: 30px;
     }
 
     .show {

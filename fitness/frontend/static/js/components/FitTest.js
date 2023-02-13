@@ -51,5 +51,13 @@ export default function fitTest() {
             // HTML에 따로 js를 추가하려 했지만 버튼을 클릭하면 발생하는 이벤트이므로 버튼 클릭 이벤트에 import 했음.
             resultChart(maxValue)
         }, 2000)
-    })
+    });
+
+    const tabBar = document.querySelector(".tab_bar");
+    const navLink = document.querySelectorAll(".nav__link");
+    navLink.forEach((e) => {
+        if (e.pathname === document.location.pathname) {
+            e.style.backgroundColor = "#dfdddd"
+        }
+    });
 }

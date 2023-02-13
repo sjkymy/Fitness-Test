@@ -1,4 +1,3 @@
-import Home from "../pages/Home.js";
 import firebaseSet from "./Firebase.js"
 
 export default function homeEffect() {

@@ -5,13 +5,13 @@ import Settings from "./pages/Settings.js";
 import NotFound from "./pages/NotFound.js";
 import homeEffect from "./components/homeEffect.js";
 import fitTest from "./components/FitTest.js";
-import splash from "./components/Splash.js";
+import settingjs from "./components/settingsjs.js";
 
 const router = async () => {
     const routes = [
         { path: "/", view: Home, script: homeEffect },
         { path: "/posts", view: Posts, script: fitTest },
-        { path: "/settings", view: Settings, script: splash },
+        { path: "/settings", view: Settings, script: settingjs },
         { path: "/404", view: NotFound }
     ];
 
