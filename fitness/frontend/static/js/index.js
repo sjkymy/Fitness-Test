@@ -1,17 +1,17 @@
 // Expected a JavaScript module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec ---> 콘솔에서 오류 표시가 남. 파일 경로와 확장명을 정확하게 기입해야 함.
-import Home from "./pages/Home.js";
-import Posts from "./pages/Posts.js";
-import Settings from "./pages/Settings.js";
-import NotFound from "./pages/NotFound.js";
-import homeEffect from "./components/homeEffect.js";
-import fitTest from "./components/FitTest.js";
-import settingjs from "./components/settingsjs.js";
+import Home from "./pages/Home/Home.js";
+import Posts from "./pages/Cardio/Cardio.js";
+import Muscle from "./pages/Muscle/Muscle.js";
+import NotFound from "./pages/NotFound/NotFound.js";
+import homeEffect from "./pages/Home/homeEffect.js";
+import fitTest from "./pages/Cardio/FitTest.js";
+import muscleFitTest from "./pages/Muscle/muscleFitTest.js";
 
 const router = async () => {
     const routes = [
         { path: "/", view: Home, script: homeEffect },
-        { path: "/posts", view: Posts, script: fitTest },
-        { path: "/settings", view: Settings, script: settingjs },
+        { path: "/cardio", view: Posts, script: fitTest },
+        { path: "/muscle", view: Muscle, script: muscleFitTest },
         { path: "/404", view: NotFound }
     ];
 

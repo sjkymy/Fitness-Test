@@ -1,4 +1,4 @@
-import AbstractView from "./AbstractView.js";
+import AbstractView from "../AbstractView/AbstractView.js";
 
 export default class extends AbstractView {
     constructor() {
@@ -27,7 +27,7 @@ export default class extends AbstractView {
         <main>
             <section class="sec_home" id="home">
                 <h2 class="title">지금 당신의 <strong>체력수준</strong>을 확인해보세요!</h2>
-                <a href="/posts" class="btn_start" data-link>시작하기</a>
+                <a href="/cardio" class="btn_start" data-link>시작하기</a>
                 <p>삼성 혹은 애플 운동앱을 켜고 12분 동안 달린 거리를 측정해보세요.</p>
                 <p>달린 거리를 입력하고 결과를 확인하세요.</p>
                 <p>연령, 성별 대비 체력 수준을 확인할 수 있어요.</p>
@@ -52,13 +52,13 @@ export default class extends AbstractView {
                         <h3>최대산소섭취량이 낮으면</h3>
                         <p>심혈관질환 위험 증가</p>
                         <p>대사질환 위험 증가</p>
-                        <img src="../../static/assets/ECG.jpg" alt="">
+                        <img src="../../../assets/ECG.jpg" alt="">
                     </div>
                     <div class="effect two">
                         <h3>최대산소섭취량이 향상되면</h3>
                         <p>심혈관질환 위험 감소</p>
                         <p>대사질환 위험 감소</p>
-                        <img src="../../static/assets/aerobic.png" alt="">
+                        <img src="../../../assets/aerobic.png" alt="">
                     </div>
                 </div>
             </section>

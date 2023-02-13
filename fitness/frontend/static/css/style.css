@@ -93,17 +93,17 @@ option {
   margin: 0;
 }
 
-.twelve, .vo2_max {
+.twelve, .vo2_max, .sec_pushup, .sec_resultPushup {
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
 }
 
-.twelve label, .vo2_max label {
+.twelve label, .vo2_max label, .sec_pushup label, .sec_resultPushup {
     font-size: 1.2rem;
 }
 
-.vo2_max {
+.vo2_max, .sec_resultPushup {
     display: none;
 }
 
@@ -145,52 +145,6 @@ option {
     100%{width: 100%;}
   }
 
-/* .cont-result-loading .progress_bar{
-    position: absolute;
-    background-color: var(--backgroundColor);
-    width: 0px;
-    height: 15px;
-    border-radius: 15px;
-    -webkit-animation: progress 2s infinite linear;
-            animation: progress 2s infinite linear;   
-}
-
-@-webkit-keyframes progress {
-    0%{
-        width: 0%;
-    }
-    25%{
-        width: 50%;
-    }
-    50%{
-        width: 75%;
-    }
-    75%{
-        width: 85%;
-    }
-    100%{
-        width: 100%;
-    }
-}
-
-@keyframes progress{
-    0%{
-      width: 0%;
-    }
-    25%{
-        width: 50%;
-    }
-    50%{
-        width: 75%;
-    }
-    75%{
-        width: 85%;
-    }
-    100%{
-        width: 100%;
-    }
-} */
-
 .canvas_grade {
     margin-left: 50px;
 }
@@ -209,7 +163,22 @@ option {
     border-bottom: 3px #DBDBDB solid;
 }
 
+#inpPushup {
+    width: 300px;
+    font-size: 1.3rem;
+    padding: 0 0 0.2em 1em;
+    margin: 1em 0;
+    border: none;
+    background-color: #f5f6f7;
+    border-bottom: 3px #DBDBDB solid;
+}
+
 .vo2_max {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.sec_resultPushup {
     text-align: center;
     margin-top: 70px;
 }
@@ -226,7 +195,24 @@ option {
     border-bottom: 3px #DBDBDB solid;
 }
 
+#inpResultPushup {
+    text-align: center;
+    width: 100px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding: 0 0 0.2em 0;
+    margin: 0.4em 0;
+    border: none;
+    background-color: #f5f6f7;
+    border-bottom: 3px #DBDBDB solid;
+}
+
 #twelveRun:focus {
+    outline: none;
+    border-bottom: 3px var(--mainColor) solid;
+}
+
+#inpPushup:focus {
     outline: none;
     border-bottom: 3px var(--mainColor) solid;
 }
@@ -312,12 +298,21 @@ option {
         padding: 0 0 0.2em 1em;
     }
 
+    #inpPushup {
+        width: 10em;
+        padding: 0 0 0.2em 1em;
+    }
+
     #btnSubmit {
         width: 80%;
         margin: 20px auto;
     }
-
+    
     .vo2_max {
+        margin-top: 30px;
+    }
+
+    .sec_resultPushup {
         margin-top: 30px;
     }
 

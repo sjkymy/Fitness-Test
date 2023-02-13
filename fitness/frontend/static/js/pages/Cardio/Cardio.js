@@ -1,4 +1,4 @@
-import AbstractView from "./AbstractView.js";
+import AbstractView from "../AbstractView/AbstractView.js";
 
 export default class extends AbstractView {
     constructor() {
@@ -8,7 +8,7 @@ export default class extends AbstractView {
 
     async getHtml() {
         return `
-        <!--<div class="splash"></div>-->
+        <!-- <div class="splash"></div> -->
         <form id="testForm">
             <legend>심폐체력 등급</legend>
             <!-- 정보 입력 -->
@@ -65,8 +65,8 @@ export default class extends AbstractView {
             <!-- //결과 화면 -->
         </form>
         <nav class="tab_bar">
-            <a href="/posts" class="nav__link" data-link><i class="fa-solid fa-person-running"></i>심폐체력</a>
-            <a href="/settings" class="nav__link" data-link><i class="fa-solid fa-dumbbell"></i>근지구력</a>
+            <a href="/cardio" class="nav__link" data-link><i class="fa-solid fa-person-running"></i>심폐체력</a>
+            <a href="/muscle" class="nav__link" data-link><i class="fa-solid fa-dumbbell"></i>근지구력</a>
         </nav>
         `;
     };
