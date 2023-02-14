@@ -52,13 +52,13 @@ export default class extends AbstractView {
                         <h3>최대산소섭취량이 낮으면</h3>
                         <p>심혈관질환 위험 증가</p>
                         <p>대사질환 위험 증가</p>
-                        <img src="../../../assets/ECG.jpg" alt="">
+                        <img src="../../../static/assets/ECG.jpg" alt="심전도그림">
                     </div>
                     <div class="effect two">
                         <h3>최대산소섭취량이 향상되면</h3>
                         <p>심혈관질환 위험 감소</p>
                         <p>대사질환 위험 감소</p>
-                        <img src="../../../assets/aerobic.png" alt="">
+                        <img src="../../../static/assets/aerobic.png" alt="런닝머신 달리기 그림">
                     </div>
                 </div>
             </section>
