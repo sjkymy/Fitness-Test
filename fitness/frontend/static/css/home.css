@@ -21,10 +21,6 @@ strong {
     font-size: 1.2em;
 }
 
-.nav_router {
-    display: none;
-}
-
 .topbar {
     width: 100%;
     z-index: 10;

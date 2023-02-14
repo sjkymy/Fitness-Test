@@ -10,7 +10,7 @@ export default class extends AbstractView {
         return `
         <!-- <div class="splash"></div> -->
         <form id="testForm">
-            <legend>심폐체력 등급</legend>
+        <legend><a href="/" class="iconHome" data-link><i class="fa-solid fa-house"></i></a>심폐체력 등급</legend>
             <!-- 정보 입력 -->
             <section class="gender_age_group">
                 <p class="tit_gender">성별을 선택하세요</p>

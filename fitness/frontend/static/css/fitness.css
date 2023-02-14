@@ -34,9 +34,18 @@ sub {
     max-width: 700px;
     margin: 30px auto 90px;
     font-family: 'Noto Sans KR', sans-serif;
+    
+}
+
+#testForm .iconHome {
+    position: absolute;
+    color: #000;
+    font-size: 1.8rem;
+    left: 157px;
 }
 
 #testForm legend {
+    position: relative;
     text-align: center;
     margin-bottom: 50px;
     font-size: 1.8rem;
@@ -298,7 +307,14 @@ option {
 }
 
 
-@media (max-width: 460px) {
+@media (max-width: 720px) {
+    #testForm .iconHome {
+        position: absolute;
+        color: #000;
+        font-size: 1.8rem;
+        left: 23px;
+    }
+
     #twelveRun {
         width: 10em;
         padding: 0 0 0.2em 1em;
