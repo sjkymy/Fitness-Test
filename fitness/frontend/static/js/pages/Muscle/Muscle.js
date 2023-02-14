@@ -9,6 +9,7 @@ export default class extends AbstractView {
     async getHtml() {
         return `
             <form id="testForm">
+            <i class="fa-solid fa-house" id="iconHome"></i>
             <legend>근지구력 등급</legend>
             <!-- 정보 입력 -->
             <section class="gender_age_group">
@@ -30,7 +31,7 @@ export default class extends AbstractView {
             </section>
             <section class="sec_pushup">
                 <label for="inpPushup">팔굽혀펴기를 최대 몇 회 하셨나요?</label>
-                <input type="number" name="pushup" id="inpPushup" oninput="handleOnInput(this, 4)" placeholder="예) 10" />회
+                <input type="number" name="pushup" id="inpPushup" oninput="handleOnInput(this, 2)" placeholder="예) 10" />회
             </section>
             <button id="btnSubmit">결과보기</button>
             <!-- //정보 입력 -->

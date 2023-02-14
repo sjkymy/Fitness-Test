@@ -8,7 +8,6 @@ export default function muscleFitTest() {
     const ResultPushup = testForm.querySelector("#inpResultPushup");
     const btnSubmit = testForm.querySelector("#btnSubmit");
     const loadingSection = testForm.querySelector(".cont-result-loading");
-    const tabBar = document.querySelector(".tab_bar");
 
     // 숫자가 아니면 초기화하고 에러메세지 추가
     inpPushup.addEventListener("input", (e) => {

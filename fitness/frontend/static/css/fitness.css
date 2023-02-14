@@ -93,6 +93,12 @@ option {
   margin: 0;
 }
 
+#inpPushup::-webkit-outer-spin-button,
+#inpPushup::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .twelve, .vo2_max, .sec_pushup, .sec_resultPushup {
     width: 90%;
     max-width: 400px;

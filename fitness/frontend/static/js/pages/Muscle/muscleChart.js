@@ -52,11 +52,11 @@ const g = svg.selectAll("g")
       .attr("width", width)
       .attr("height", 50)
       .attr("fill", 
-        (dataGrade.includes("매우 우수")) ? "#89A6DB" :
-        (dataGrade.includes("우수")) ? "#BFD0EB" :
-        (dataGrade.includes("보통")) ? "#FFCD56" :
-        (dataGrade.includes("부족")) ? "#F7955F" :
-        (dataGrade.includes("매우 부족")) ? "#D7540B" :
+        (dataGrade.includes("매우 훌륭")) ? "#89A6DB" :
+        (dataGrade.includes("매우 우수")) ? "#BFD0EB" :
+        (dataGrade.includes("우수")) ? "#FFCD56" :
+        (dataGrade.includes("보통")) ? "#F7955F" :
+        (dataGrade.includes("약함")) ? "#D7540B" :
         console.log("입력 값 없음")
       )
 
@@ -73,15 +73,15 @@ const g = svg.selectAll("g")
 const config = {
   type: 'gauge',
   data: {
-    labels: ['매우부족', '부족', '보통', '우수', '매우우수'],
+    labels: ['약함', '보통', '우수', '매우 우수', '매우 훌륭'],
     datasets: [{
       data: ['10', '20', '30', '40', '50'],
       value: 
-      (dataGrade.includes("매우 우수")) ? 45 :
-      (dataGrade.includes("우수")) ? 35 :
-      (dataGrade.includes("보통")) ? 25 :
-      (dataGrade.includes("부족")) ? 15 :
-      (dataGrade.includes("매우 부족")) ? 5 :
+      (dataGrade.includes("매우 훌륭")) ? 45 :
+      (dataGrade.includes("매우 우수")) ? 35 :
+      (dataGrade.includes("우수")) ? 25 :
+      (dataGrade.includes("보통")) ? 15 :
+      (dataGrade.includes("약함")) ? 5 :
       console.log("입력 값 없음"),
       backgroundColor: ['#D7540B', '#F7955F', '#FFCD56', '#BFD0EB', '#89A6DB'],
       borderWidth: 3,
@@ -135,7 +135,7 @@ const barLabels = ['내 결과', `${selecAge.value}대 ${selecGender.value} 적�
 const myData1 = {
     labels: barLabels,
     datasets: [{
-        labels: "최대산소섭취량(ml/kg/min)",
+        labels: "팔굽혀펴기(회)",
         backgroundColor: ["#ed6f63", "#263343"],
         data: [myMuscleData, aveData]
     }]    
