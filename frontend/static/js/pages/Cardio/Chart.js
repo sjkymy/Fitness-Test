@@ -34,7 +34,7 @@ let height = 90;
 const dataGrade = [];
 cardioGrade(selecGender, selecAge, myCardioData, dataGrade)
 
-const colors = ['#D7540B','#F7955F','#FFCD56','#BFD0EB','#89A6DB'];
+// const colors = ['#D7540B','#F7955F','#FFCD56','#BFD0EB','#89A6DB'];
 
 const svg = d3.select(".canvas_grade")
             .append("svg")
