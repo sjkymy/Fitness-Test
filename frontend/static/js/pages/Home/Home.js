@@ -118,7 +118,7 @@ export default class extends AbstractView {
             </section>
         </main>
         <footer>
-            <p>&copy: BruceCardio {new Date().getFullYear()} ALL RIGHTS RESERVED.</p>
+            <p>&copy BruceCardio 2023 ALL RIGHTS RESERVED.</p>
         </footer>
         `;
     };
