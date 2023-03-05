@@ -35,7 +35,7 @@
 </div>
 
 ## 3. 개발환경
-### (1) 라우팅 시스템
+### (1) 라우팅 시스템 (index.js)
 history API(브라우저 라우터)를 이용하여 라우팅 개발했다.
 라우팅 개발에는 history API(브라우저 라우터)와 Fragment hash(해시 라우터)가 있다.
 - history API를 이용한 이유 <br />
@@ -45,5 +45,37 @@ history API(브라우저 라우터)를 이용하여 라우팅 개발했다.
 **네 번째**, Redirection이 발생했을 때, 해시 라우터는 이전의 도메인 주소로 요청되어 페이지 오류가 발생하지 않지만 잘못된 경로 혹은 오류가 있을 경우 아무 정보가 없는 것 보다 404 에러를 유저에게 전달하는 것이 필요하다.(대부분 단점이라고 말하지만 필요한 부분이라고 생각됨.) <br />
 **다섯 번째**, 가장 보편화 되어 있음.
 
-### (2) 서버 구동
-node.js 프레임워크 express를 설치하고 서부를 구축했다.
+### (2) 서버 구동 (server.js)
+node.js 프레임워크 express를 설치하고 서버를 구축했다. <br />
+<code>npm init</code> // package.json 생성.<br />
+<code>npm install express</code> // express 설치.
+```javascript
+// frontend -> static 폴더로 이어지는 절대경로에서 static 폴더안에 정적 파일(이미지, CSS 및 JS) 사용하기.
+app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")))
+// get요청 후 응답 방법. 모든 경로에 index.html 파일 제공.
+app.get("/*", (req, res) => {
+    res.sendFile(path.resolve("frontend", "index.html"))
+});
+// port를 생성하고 서버 실행하기. localhost:5001
+app.listen(process.env.PORT || 5001, () => console.log("Server running..."));
+```
+
+### (3) 데이터 시각화 (Chart.js / muscleChart.js)
+조건문으로 
+
++ D3.js  https://d3js.org <br />
+  - 체력 수준에 따라 배경색과 텍스트가 다르게 나타난다.
+  - 아래 코드 index.html에 추가.
+  ```javascript
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  ```
+
++ Chart.js  https://github.com/haiiaaa/chartjs-gauge <br />
+  - bar 형태의 그래프를 통해 동일 연령대 및 성별에서의 평균값과 사용자의 결과값을 비교한다. <br />
+  - gauge 형태의 그래프를 통해 5개로 구분된 체력 등급 중 해당하는 등급에 표시된다.
+  - 아래 코드 index.html에 추가.
+  ```javascript
+  <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+  <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
+  <script src="https://unpkg.com/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
+  ```
