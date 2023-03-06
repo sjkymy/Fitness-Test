@@ -61,8 +61,6 @@ app.listen(process.env.PORT || 5001, () => console.log("Server running..."));
 ```
 
 ### (3) 데이터 시각화 (Chart.js / muscleChart.js)
-조건문으로 
-
 + D3.js  https://d3js.org <br />
   - 체력 수준에 따라 배경색과 텍스트가 다르게 나타난다.
   - 아래 코드 index.html에 추가.
@@ -79,3 +77,34 @@ app.listen(process.env.PORT || 5001, () => console.log("Server running..."));
   <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
   <script src="https://unpkg.com/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
   ```
+
+### (4) 페이지 만들기 (index.js, AbstractView.js)
+페이지별 같은 프로퍼티와 메서드를 공유하고 효율성을 높이기 위해 개략적인 틀을 담은 class 함수를 만들고 이를 공유하는 방식을 사용했다.
+```javascript
+// AbstractView.js
+export default class {
+    constructor() {
+
+    }
+    setTitle(title) {
+        document.title = title;
+    }
+    async getHtml() {
+        return "";
+    }
+}
+```
+해당 class를 Home, Cardio, Muscle, 404 페이지에 상속받고, index.js파일에서 라우터를 구현한다.
+```javascript
+// index.js
+const routes = [
+    { path: "/", view: Home, script: homeEffect },
+    { path: "/cardio", view: Posts, script: fitTest },
+    { path: "/muscle", view: Muscle, script: muscleFitTest },
+    { path: "/404", view: NotFound }
+];
+```
+
+
+## 4. 트러블슈팅
+### (1) 스크립트 관리
