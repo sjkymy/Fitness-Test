@@ -138,8 +138,36 @@ window 객체가 웹 문서를 불러올 때 준비가 되면 JS파일을 실행
 ```javascript
 // Fittest.js
 export default window.onload = function fitTest() {
-
+...
 }
 ```
 
-해결이 되는 듯 했으나 페이지가 바뀌면 다시 콘솔창에 이전과 같은 오류 메세지가 나왔다.
+해결이 되는 듯 했으나 페이지가 바뀌면 콘솔창에 이전과 같은 오류 메세지가 나왔다.
+
+
+해결방법은 생각보다 간단했다.<br />
+라우트별로 실행할 스크립트 파일을 routes 객체 안에 넣는 것이다.
+```javascript
+// index.js
+const router = async () => {
+    const routes = [
+        { path: "/", view: Home, script: homeEffect },
+        { path: "/cardio", view: Posts, script: fitTest },
+        { path: "/muscle", view: Muscle, script: muscleFitTest },
+        { path: "/404", view: NotFound }
+    ];
+    
+    ...
+    
+    match.route.script();
+}
+```
+routes의 각 객체마다 script를 추가한다.<br />
+코드 작성 초기에는 객체 안에 path와 view만 있었다. 중간에 생략된 코드가 있지만 location.pathname와 각 객체에서의 path와 일치하는지 확인하고 일치하면 해당하는 view를 보여주는 코드가 있다. 동시에 스크립트까지 실행하는 코드를 추가했다. <br />
+
+결과적으로 잘 작동한다.
+
+## 5. 추가 수정사항 및 리팩토링
++ 이미지 최적화를 통해 퍼포먼스 향상 필요
++ 명암비(contrast ratio) 조절을 통해 접근성 향상 필요
++ 체력 수준 결과섹션이 보이면 '결과보기' 버튼은 '다시하기' 버튼으로 전환되어야 함.
