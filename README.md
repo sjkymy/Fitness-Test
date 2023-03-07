@@ -108,3 +108,38 @@ const routes = [
 
 ## 4. 트러블슈팅
 ### (1) 스크립트 관리
+각 페이지에서 구동해야 할 스크립트들을 HTML ```<body>```태그 안에서 전역으로 관리하려고 했다.
+```javascript
+// index.html
+<body>
+    <div id="app"></div>
+    <script type="module" src="./static/js/pages/Cardio/FitTest.js"></script>
+    <script type="module" src="./static/js/pages/Muscle/muscleFitTest.js"></script>
+    <script src="./static/js/components/InputSet.js"></script>
+    <script type="module" src="./static/js/index.js"></script>
+</body>
+```
+
+콘솔창에 다음과 같은 오류가 안내된다.
+> Uncaught TypeError: Cannot read property 'addEventListener' of null
+
+해당 오류의 원인은 2가지다.
++ DOM에 없는 요소의 addEventListener() 메서드에 접근했기 때문에.
++ DOM이 완전히 로드되기 전에 실행되기 때문에(보통 <head> 태그안에 스크립트가 위치해서).
+
+첫 번째 원인은 요소 선택자에 문제가 있는 것인데, 문제가 되는 지점에서 querySelector는 올바르게 선택하고 있었다. <br />
+두 번째 원인은 일반적으로 HTML ```<head>``` 태그 안에 스크립트가 위치해서 오류가 난다. ```<body>``` 태그 하단에 스크립트를 넣어주면 DOM을 먼저 생성하고 스크립트를 받아오면서 오류가 해결되어야 한다. 그러나 처음부터 ```<body>``` 태그 하단에 넣어있어도 해결되지 않았다.
+
+
+두 번째 원인을 조금 더 파고들어서 웹브라우저 내의 모든 요소가 준비된 후 실행 될 수 있도록 했다.<br />
+```window.onload```
+window 객체가 웹 문서를 불러올 때 준비가 되면 JS파일을 실행하는 메서드다.
+
+```javascript
+// Fittest.js
+export default window.onload = function fitTest() {
+
+}
+```
+
+해결이 되는 듯 했으나 페이지가 바뀌면 다시 콘솔창에 이전과 같은 오류 메세지가 나왔다.
