@@ -1,19 +1,22 @@
 # 부르스카디오(Bruce-Cardio)
-동일 연령대 및 성별 안에서 개인의 심폐체력과 근지구력 수준을 확인할 수 있는 서비스.
+***동일 연령대 및 성별 안에서 개인의 심폐체력과 근지구력 수준을 확인할 수 있는 서비스.***
 
 + Vanilla JavaScript로 SPA(Single Page Application) 구현.
 + Chart.js와 D3.js를 이용하여 데이터 시각화.
 + Firebase Cloud를 이용하여 테이터베이스를 만들고 데이터를 저장.
 + 반응형 디자인 구현.
 
-<br />
+### 로컬 환경에서 프로젝트 구동
+1. 터미널 창에서 ```node server.js``` 입력
+2. 브라우저에서 ```localhost:5001``` 입력
+----
 
 ## 1. 기술스택(Stack)
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
 
-<br />
+----
 
 ## 2. 페이지 미리보기(Preview)
 <div>
@@ -33,6 +36,8 @@
     <img src="https://user-images.githubusercontent.com/112460273/222771543-83ff9f38-15a4-4233-8ead-4ddd70981c02.png" width="30%" />
   </span>
 </div>
+
+----
 
 ## 3. 개발환경
 ### (1) 라우팅 시스템 (index.js)
@@ -105,6 +110,7 @@ const routes = [
 ];
 ```
 
+----
 
 ## 4. 트러블슈팅
 ### (1) 스크립트 관리
@@ -166,6 +172,8 @@ routes의 각 객체마다 script를 추가한다.<br />
 코드 작성 초기에는 객체 안에 path와 view만 있었다. 중간에 생략된 코드가 있지만 location.pathname와 각 객체에서의 path와 일치하는지 확인하고 일치하면 해당하는 view를 보여주는 코드가 있다. 동시에 스크립트까지 실행하는 코드를 추가했다. <br />
 
 결과적으로 잘 작동한다.
+
+----
 
 ## 5. 추가 수정사항 및 리팩토링
 + 이미지 최적화를 통해 퍼포먼스 향상 필요
