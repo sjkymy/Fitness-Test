@@ -1,12 +1,12 @@
 import resultChart from "./muscleChart.js";
 
 export default function muscleFitTest() {
-    const Splash = document.querySelector(".splash");
     const testForm = document.querySelector("#testForm");
     const inpGroup = testForm.querySelector(".sec_pushup");
     const inpPushup = testForm.querySelector("#inpPushup");
     const ResultPushup = testForm.querySelector("#inpResultPushup");
     const btnSubmit = testForm.querySelector("#btnSubmit");
+    const btnReset = testForm.querySelector("#btnReset")
     const loadingSection = testForm.querySelector(".cont-result-loading");
 
     // 숫자가 아니면 초기화하고 에러메세지 추가
@@ -23,6 +23,7 @@ export default function muscleFitTest() {
     }, { once : true}); // 이벤트가 한번만 발생하게 하기 위해서 once 사용
 
     // 버튼 클릭하면 VO2max input에 계산된 결과 전달
+    btnReset.style.display = "none"
     btnSubmit.addEventListener("click", (e) => {
         e.preventDefault()
         loadingSection.style.display = "block";
@@ -30,6 +31,8 @@ export default function muscleFitTest() {
         // 로딩화면이 보이고 2초 뒤에 결과 나타나기.
         setTimeout(function() {
             loadingSection.style.display = "none";
+            btnSubmit.style.display = "none";
+            btnReset.style.display = "block";
             
             ResultPushup.value = inpPushup.value;
             const maxValue = ResultPushup.value;
@@ -44,6 +47,10 @@ export default function muscleFitTest() {
             resultChart(maxValue)
         }, 2000)
     });
+
+    btnReset.addEventListener("click", () => {
+        window.location.reload()
+    })
 
     const navLink = document.querySelectorAll(".nav__link");
     navLink.forEach((e) => {

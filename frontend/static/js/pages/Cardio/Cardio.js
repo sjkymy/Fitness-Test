@@ -34,6 +34,7 @@ export default class extends AbstractView {
                 <input type="number" name="twelve" id="twelveRun" oninput="handleOnInput(this, 4)" placeholder="예) 3000" />미터(m)
             </section>
             <button id="btnSubmit">결과보기</button>
+            <button id="btnReset"><i class="fa-solid fa-rotate-right"></i> 다시하기</button>
             <!-- //정보 입력 -->
 
             <!-- 결과 로딩 화면 -->

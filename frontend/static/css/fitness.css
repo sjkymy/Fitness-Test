@@ -232,7 +232,7 @@ option {
     border-bottom: 3px var(--mainColor) solid;
 }
 
-#btnSubmit {
+#btnSubmit, #btnReset {
     display: block;
     width: 400px;
     margin: 30px auto;
@@ -244,6 +244,11 @@ option {
     background: var(--mainColor);
     box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
     cursor: pointer;
+}
+
+#btnReset {
+    color: var(--textColor);
+    background: gray;
 }
 
 .sec_chart {
