@@ -1,19 +1,22 @@
 # 부르스카디오(Bruce-Cardio)
-동일 연령대 및 성별 안에서 개인의 심폐체력과 근지구력 수준을 확인할 수 있는 서비스.
+***동일 연령대 및 성별 안에서 개인의 심폐체력과 근지구력 수준을 확인할 수 있는 서비스.***
 
 + Vanilla JavaScript로 SPA(Single Page Application) 구현.
 + Chart.js와 D3.js를 이용하여 데이터 시각화.
 + Firebase Cloud를 이용하여 테이터베이스를 만들고 데이터를 저장.
 + 반응형 디자인 구현.
 
-<br />
+### 로컬 환경에서 프로젝트 구동
+1. 터미널 창에서 ```node server.js``` 입력
+2. 브라우저에서 ```localhost:5001``` 입력
+----
 
 ## 1. 기술스택(Stack)
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
 <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
 
-<br />
+----
 
 ## 2. 페이지 미리보기(Preview)
 <div>
@@ -33,6 +36,8 @@
     <img src="https://user-images.githubusercontent.com/112460273/222771543-83ff9f38-15a4-4233-8ead-4ddd70981c02.png" width="30%" />
   </span>
 </div>
+
+----
 
 ## 3. 개발환경
 ### (1) 라우팅 시스템 (index.js)
@@ -61,8 +66,6 @@ app.listen(process.env.PORT || 5001, () => console.log("Server running..."));
 ```
 
 ### (3) 데이터 시각화 (Chart.js / muscleChart.js)
-조건문으로 
-
 + D3.js  https://d3js.org <br />
   - 체력 수준에 따라 배경색과 텍스트가 다르게 나타난다.
   - 아래 코드 index.html에 추가.
@@ -79,3 +82,100 @@ app.listen(process.env.PORT || 5001, () => console.log("Server running..."));
   <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
   <script src="https://unpkg.com/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
   ```
+
+### (4) 페이지 만들기 (index.js, AbstractView.js)
+페이지별 같은 프로퍼티와 메서드를 공유하고 효율성을 높이기 위해 개략적인 틀을 담은 class 함수를 만들고 이를 공유하는 방식을 사용했다.
+```javascript
+// AbstractView.js
+export default class {
+    constructor() {
+
+    }
+    setTitle(title) {
+        document.title = title;
+    }
+    async getHtml() {
+        return "";
+    }
+}
+```
+해당 class를 Home, Cardio, Muscle, 404 페이지에 상속받고, index.js파일에서 라우터를 구현한다.
+```javascript
+// index.js
+const routes = [
+    { path: "/", view: Home, script: homeEffect },
+    { path: "/cardio", view: Posts, script: fitTest },
+    { path: "/muscle", view: Muscle, script: muscleFitTest },
+    { path: "/404", view: NotFound }
+];
+```
+
+----
+
+## 4. 트러블슈팅
+### (1) 스크립트 관리
+각 페이지에서 구동해야 할 스크립트들을 HTML ```<body>```태그 안에서 전역으로 관리하려고 했다.
+```javascript
+// index.html
+<body>
+    <div id="app"></div>
+    <script type="module" src="./static/js/pages/Cardio/FitTest.js"></script>
+    <script type="module" src="./static/js/pages/Muscle/muscleFitTest.js"></script>
+    <script src="./static/js/components/InputSet.js"></script>
+    <script type="module" src="./static/js/index.js"></script>
+</body>
+```
+
+콘솔창에 다음과 같은 오류가 안내된다.
+> Uncaught TypeError: Cannot read property 'addEventListener' of null
+
+해당 오류의 원인은 2가지다.
++ DOM에 없는 요소의 addEventListener() 메서드에 접근했기 때문에.
++ DOM이 완전히 로드되기 전에 실행되기 때문에(보통 <head> 태그안에 스크립트가 위치해서).
+
+첫 번째 원인은 요소 선택자에 문제가 있는 것인데, 문제가 되는 지점에서 querySelector는 올바르게 선택하고 있었다. <br />
+두 번째 원인은 일반적으로 HTML ```<head>``` 태그 안에 스크립트가 위치해서 오류가 난다. ```<body>``` 태그 하단에 스크립트를 넣어주면 DOM을 먼저 생성하고 스크립트를 받아오면서 오류가 해결되어야 한다. 그러나 처음부터 ```<body>``` 태그 하단에 넣어있어도 해결되지 않았다.
+
+
+두 번째 원인을 조금 더 파고들어서 웹브라우저 내의 모든 요소가 준비된 후 실행 될 수 있도록 했다.<br />
+```window.onload```
+window 객체가 웹 문서를 불러올 때 준비가 되면 JS파일을 실행하는 메서드다.
+
+```javascript
+// Fittest.js
+export default window.onload = function fitTest() {
+...
+}
+```
+
+해결이 되는 듯 했으나 페이지가 바뀌면 콘솔창에 이전과 같은 오류 메세지가 나왔다.
+
+
+해결방법은 생각보다 간단했다.<br />
+라우트별로 실행할 스크립트 파일을 routes 객체 안에 넣는 것이다.
+```javascript
+// index.js
+const router = async () => {
+    const routes = [
+        { path: "/", view: Home, script: homeEffect },
+        { path: "/cardio", view: Posts, script: fitTest },
+        { path: "/muscle", view: Muscle, script: muscleFitTest },
+        { path: "/404", view: NotFound }
+    ];
+    
+    ...
+    
+    match.route.script();
+}
+```
+routes의 각 객체마다 script를 추가한다.<br />
+코드 작성 초기에는 객체 안에 path와 view만 있었다. 중간에 생략된 코드가 있지만 location.pathname와 각 객체에서의 path와 일치하는지 확인하고 일치하면 해당하는 view를 보여주는 코드가 있다. 동시에 스크립트까지 실행하는 코드를 추가했다. <br />
+
+결과적으로 잘 작동한다.
+
+----
+
+## 5. 추가 수정사항 및 리팩토링
++ 이미지 최적화를 통해 퍼포먼스 향상 필요
++ 명암비(contrast ratio) 조절을 통해 접근성 향상 필요
++ 체력 수준 결과섹션이 보이면 '결과보기' 버튼은 '다시하기' 버튼으로 전환되어야 함.
